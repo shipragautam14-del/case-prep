@@ -182,7 +182,11 @@ async function renderSide() {
     side.innerHTML = `<h3>Your patterns</h3>${
       rows || `<p class="hint-muted">No completed cases yet. Patterns appear here after a few cases. There's no overall score.</p>`
     }<p class="hint-muted" style="margin-top:10px">${p.cases} case(s) · ${p.drills} drill(s)</p>
-    <h3>Setup</h3><div class="hint-muted">Model: ${escapeHtml(status.model)} via ${escapeHtml(status.provider)}<br>Case library: ${status.library.total} cases (${Object.entries(status.library.bySource).map(([k, v]) => `${escapeHtml(k.replace(/ \(.*/, ""))}: ${v}`).join(", ")})<br>Source documents indexed: ${status.sources.consulting} consulting, ${status.sources.pm} PM${status.sources.documents ? "" : '<br><br>No source PDFs ingested yet. Drop them in <code>sources/consulting</code> and <code>sources/pm</code>, then run <code>npm run ingest</code>.'}</div>`;
+    <h3>Setup</h3><div class="hint-muted">${
+      status.sources.hosted
+        ? `${status.provider === "unavailable" ? "<b>Open this page inside Claude to practise.</b> It uses your Claude account to run the interviewer.<br>" : "Runs on your Claude account.<br>"}Progress is saved to ${escapeHtml(status.storage)}.<br>Case library: ${status.library.total} cases`
+        : `Model: ${escapeHtml(status.model)} via ${escapeHtml(status.provider)}<br>Case library: ${status.library.total} cases (${Object.entries(status.library.bySource).map(([k, v]) => `${escapeHtml(k.replace(/ \(.*/, ""))}: ${v}`).join(", ")})<br>Source documents indexed: ${status.sources.consulting} consulting, ${status.sources.pm} PM${status.sources.documents ? "" : '<br><br>No source PDFs ingested yet. Drop them in <code>sources/consulting</code> and <code>sources/pm</code>, then run <code>npm run ingest</code>.'}`
+    }</div>`;
   } catch {
     side.innerHTML = "";
   }
@@ -190,6 +194,8 @@ async function renderSide() {
 
 // ------------------------------------------------------------------ API
 async function api(method, url, body) {
+  // The hosted build (web/entry.js) runs the agent in the page and provides this.
+  if (globalThis.caseBuddyApi) return globalThis.caseBuddyApi(method, url, body);
   const res = await fetch(url, { method, headers: { "Content-Type": "application/json" }, body: body ? JSON.stringify(body) : undefined });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);

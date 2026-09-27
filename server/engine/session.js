@@ -367,7 +367,11 @@ async function interviewerReply(session, caseObj, directive, fallbackLine) {
     leak = checkLeak(reply, caseObj, session);
     if (leak.leak) reply = fallbackLine;
   }
-  return reply.replace(/^\s*(interviewer|INTERVIEWER)\s*:\s*/, "").trim();
+  return reply
+    .replace(/^\s*(interviewer|INTERVIEWER)\s*:\s*/, "")
+    // internal transcript markers the model sometimes echoes
+    .replace(/^\s*\[(exhibit|a teaching break)[^\]\n]*\]\s*$/gim, "")
+    .trim();
 }
 
 async function finishCase(session, caseObj, endedBy = null) {

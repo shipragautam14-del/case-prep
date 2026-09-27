@@ -5,3 +5,4 @@ var/
 sources/**/*
 !sources/**/
 !sources/**/README.md
+web/dist/
