@@ -78,6 +78,10 @@ function createCaseSession(caseObj, mode, extra = {}) {
   };
   if (extra.intro) session.transcript.unshift(item("system", extra.intro));
   sessions.save(session);
+  // Remember recent starts (even unfinished ones) so selection doesn't keep serving the same case.
+  const profile = loadProfile();
+  profile.recentStarts = [...(profile.recentStarts || []), caseObj.id].slice(-10);
+  saveProfile(profile);
   return session;
 }
 
@@ -242,6 +246,22 @@ async function startRedoWeakest() {
   if (drillSkill && lastWasCase) {
     const s = await startDrill(drillSkill);
     s.transcript.unshift(item("system", `Targeting your recurring gap: **${label}**. ${weak.status?.lastEvidence ? `(Last time: ${weak.status.lastEvidence})` : ""}`));
+    sessions.save(s);
+    return s;
+  }
+  // Guesstimate skills are practised on guesstimates, not full cases.
+  if (["scoping", "decomposition", "assumptions", "sanity_check"].includes(weak.skill)) {
+    return startCase({
+      mode: "guesstimate",
+      focus: [weak.skill],
+      requireSkill: weak.skill,
+      intro: `Targeting your recurring gap: **${label}**. Give every assumption a one-line "because".`,
+    });
+  }
+  const anyCaseTestsIt = allCases().some((c) => c.type !== "guesstimate" && c.skills_tested.includes(weak.skill));
+  if (!anyCaseTestsIt && drillSkill) {
+    const s = await startDrill(drillSkill);
+    s.transcript.unshift(item("system", `Targeting your recurring gap: **${label}**.`));
     sessions.save(s);
     return s;
   }

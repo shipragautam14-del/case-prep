@@ -281,6 +281,10 @@ test("case selection avoids completed cases and targets weaknesses; profile neve
   }
   const focus = selectCase({ focusSkills: ["exhibit_interpretation"], requireSkill: "exhibit_interpretation" }, profileMod.emptyProfile());
   assert.ok(focus.case.skills_tested.includes("exhibit_interpretation"));
+  const started = profileMod.emptyProfile();
+  const first = selectCase({}, started).case.id;
+  started.recentStarts = [first];
+  for (let i = 0; i < 10; i++) assert.notEqual(selectCase({}, started).case.id, first, "recently started case repeated");
   const g = selectCase({ caseType: "guesstimate" }, profileMod.emptyProfile());
   assert.equal(g.case.type, "guesstimate");
   const short = selectCase({ short: true }, profileMod.emptyProfile());

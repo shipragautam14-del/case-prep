@@ -98,6 +98,9 @@ export function selectCase(req = {}, profile) {
     const typeRepeats = recentTypes.filter((t) => t === c.type).length;
     score -= typeRepeats * (req.caseType && req.caseType !== "any" ? 0 : 2.5);
     if (recentIndustries.includes(c.industry.toLowerCase())) score -= 2;
+    // Started recently (even if not finished): strongly avoid serving it again.
+    const startIdx = (profile.recentStarts || []).lastIndexOf(c.id);
+    if (startIdx >= 0) score -= 6 - (profile.recentStarts.length - 1 - startIdx) * 0.5;
     if (usingRepeats) {
       const last = profile.cases.filter((x) => x.caseId === c.id).at(-1);
       score -= last ? 5 : 0;
