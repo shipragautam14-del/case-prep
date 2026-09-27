@@ -25,7 +25,7 @@ const COLORS = ["#1f4e79", "#d98a2b", "#4c9a6a", "#9b5aa8"];
 function renderExhibit(ex) {
   const wrap = document.createElement("div");
   wrap.className = "exhibit";
-  const unit = ex.unit ? ` <span class="hint-muted">(${escapeHtml(ex.unit)})</span>` : "";
+  const unit = ex.unit && !ex.title.includes(ex.unit) ? ` <span class="hint-muted">(${escapeHtml(ex.unit)})</span>` : "";
   let body = "";
   if (ex.kind === "table") {
     body = `<table><thead><tr>${(ex.columns || []).map((c) => `<th>${escapeHtml(c)}</th>`).join("")}</tr></thead><tbody>${(ex.rows || [])

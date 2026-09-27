@@ -2,7 +2,8 @@
 // never receives hidden content). Flags interviewer text that contains numbers from unreleased
 // data or long phrases from the hidden insights/solution.
 
-const NUM_RE = /(?:₹|\$|rs\.?\s?)?\d[\d,]*(?:\.\d+)?\s?(?:%|cr|crore|lakh|mn|million|bn|billion|k)?/gi;
+// Digits glued to letters (FY23, Q1, e1) are labels, not data.
+const NUM_RE = /(?<![A-Za-z\d.])(?:₹|\$|rs\.?\s?)?\d[\d,]*(?:\.\d+)?\s?(?:%|cr|crore|lakh|mn|million|bn|billion|k)?(?![A-Za-z]{2})/gi;
 
 function normNum(s) {
   const m = s.toLowerCase().replace(/[₹$,\s]|rs\.?/g, "");
