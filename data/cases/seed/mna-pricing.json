@@ -1,0 +1,212 @@
+[
+  {
+    "id": "seed-mna-cdmo",
+    "source": "seed (original case written for this app)",
+    "title": "Pharma CDMO: acquire an API manufacturer?",
+    "industry": "Pharmaceuticals (CDMO / APIs)",
+    "type": "mna",
+    "secondary_types": ["strategy"],
+    "format": "standard",
+    "duration_min": 30,
+    "difficulty": { "structuring": 3, "ambiguity": 4, "quantitative": 3, "exhibit": 3, "prioritization": 3, "hypothesis": 3, "communication": 4, "industry_unfamiliarity": 4 },
+    "skills_tested": ["structuring", "hypothesis", "quantitative", "exhibit_interpretation", "business_judgment", "recommendation", "communication"],
+    "unconventional": false,
+    "opening": "Our client is a mid-sized Indian contract development and manufacturing organisation (a CDMO) with about ₹2,400 crore in revenue. It has been offered the chance to acquire Vizag-based Andhra Fine Chem, an active pharmaceutical ingredient (API) manufacturer, for about ₹1,800 crore. The CEO wants to know whether they should do the deal.",
+    "client_context": "The client makes formulations and advanced intermediates for global pharma companies under contract. About 30% of its key starting materials and intermediates are imported from China. The target is family-owned; the family wants to exit within 6 months.",
+    "objective": "Recommend whether to acquire the target, and on what terms.",
+    "clarifications": [
+      { "id": "c1", "topic": "rationale / why now", "answer": "Two reasons: supply security (a 2023 China supply disruption stopped two of the client's product lines for 7 weeks), and customers increasingly want 'China+1' suppliers for APIs." },
+      { "id": "c2", "topic": "financing", "answer": "The client can fund the deal with cash and debt; net debt/EBITDA would rise to about 2.5x, which the board accepts." },
+      { "id": "c3", "topic": "deadline / process", "answer": "There is one other interested bidder, a PE fund. Binding bids are due in 8 weeks." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Valuation benchmark", "content": "Listed Indian API peers trade at 13-15x EV/EBITDA; recent private API deals were done at 11-13x.", "release_when": "Candidate asks how the price compares, or about multiples/valuation." },
+      { "id": "d2", "label": "Synergy estimates (management)", "content": "Procurement/backward-integration savings ~₹40 cr a year from year 1; cross-selling APIs to the client's customers could add ~₹25 cr EBITDA by year 3. One-off integration cost ~₹60 cr.", "release_when": "Candidate asks about synergies or what the combined entity gains." },
+      { "id": "d3", "label": "Regulatory diligence", "content": "The target's main plant received a USFDA Form 483 with 6 observations in 2024. The response has been filed, but a re-inspection is pending. Plants that receive a warning letter typically lose US-market sales for 18-24 months.", "release_when": "Candidate asks about risks, regulatory status, quality, or due diligence." },
+      { "id": "d4", "label": "Customer contracts", "content": "The largest customer's supply contract expires in 14 months. It has a change-of-control clause allowing termination if ownership changes.", "release_when": "Candidate asks about customer concentration risk or contract terms." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "Andhra Fine Chem: financial summary (₹ crore)",
+        "kind": "table",
+        "columns": ["", "FY23", "FY24", "FY25"],
+        "rows": [["Revenue", 820, 910, 1000], ["EBITDA", 115, 135, 150], ["EBITDA margin", "14%", "15%", "15%"], ["Share of revenue from largest customer", "52%", "57%", "60%"], ["Share of revenue from US market", "38%", "40%", "42%"]],
+        "release_when": "Candidate asks about the target's financials, performance or customers.",
+        "takeaways": ["The asking price is ~12x EBITDA (₹1,800 / ₹150 cr), in line with private deals and below listed peers.", "Customer concentration is high and rising (60% from one customer).", "42% of revenue is US-exposed, which matters given the pending USFDA re-inspection."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "Is the price fair on a standalone basis?", "solution": "₹1,800 / ₹150 cr = 12x EBITDA, within 11-13x private deals and below 13-15x listed peers.", "answer": "12x: fair to slightly attractive on standalone numbers" },
+      { "id": "q2", "question": "Value of synergies", "solution": "Run-rate synergies ~₹65 cr EBITDA (40 + 25). At ~10x, that's ~₹650 cr of value, minus ~₹60 cr integration cost → ~₹590 cr.", "answer": "~₹600 cr of synergy value" },
+      { "id": "q3", "question": "Downside if the largest customer leaves or the USFDA outcome is bad", "solution": "Losing the largest customer (60% of revenue) could remove more than half of EBITDA. A warning letter could take out much of the 42% US revenue for ~2 years. In either case, standalone value could fall well below ₹1,800 cr.", "answer": "Value could fall by 40-60%, wiping out the synergy value" }
+    ],
+    "analytical_paths": [
+      "Strategic rationale → standalone value → synergies → risks/diligence → price and deal structure → recommendation.",
+      "Hypothesis: 'strategically sound and fairly priced, but risks sit in customer concentration and regulatory status' → test each."
+    ],
+    "key_insights": [
+      "Strategically sound (supply security, China+1) and fairly priced at ~12x with ~₹600 cr of synergies.",
+      "Two deal-breaking risks: a pending USFDA re-inspection (42% US revenue) and a change-of-control clause on a customer that is 60% of revenue.",
+      "The answer is a structured 'yes, if': protect against those risks through price and terms."
+    ],
+    "reference_solution": "Rationale is strong (supply security after the 2023 disruption, China+1 demand). Standalone price ~12x EBITDA is fair; synergies add ~₹600 cr of value. But the target has concentrated customer risk (60%, change-of-control clause, contract expiry in 14 months) and regulatory risk (Form 483, re-inspection pending). Recommend proceeding only with protections: an earn-out or escrow tied to USFDA clearance and to the key customer's consent/renewal, pre-signing engagement with that customer, and a walk-away price if they won't accept it.",
+    "alternative_approaches": [
+      "Build or partner instead of buy: a greenfield API plant (3-4 years) or long-term supply contracts with Indian API makers. A candidate who compares these options is showing strong judgment.",
+      "A valuation-first approach (DCF of standalone + synergies - risks) is valid if it reaches the risk-adjusted terms."
+    ],
+    "recommendation": "Bid, but conditionally. Offer ~₹1,500-1,600 cr upfront with an earn-out of ~₹200-300 cr payable on USFDA clearance and renewal of the largest customer's contract. Make customer consent a condition precedent, and do focused quality diligence before binding bids. Walk away if the family won't accept risk-sharing, and pursue long-term supply agreements with Indian API makers as plan B. Risks: losing the deal to the PE bidder, and integration of a family-run culture.",
+    "interviewer_notes": ["Candidates who say 'yes, synergies' without diligence risks should be probed on what could go wrong.", "Good candidates translate risks into deal terms."],
+    "common_pitfalls": ["Treating synergies as certain.", "Recommending yes or no without terms.", "Ignoring the change-of-control clause."],
+    "benchmark_range": null,
+    "learning_objective": "Evaluate an acquisition beyond price and synergies: find the deal-breaking risks and turn them into deal terms."
+  },
+  {
+    "id": "seed-mna-pe-diagnostics",
+    "source": "seed (original case written for this app)",
+    "title": "PE fund: invest in a diagnostics chain?",
+    "industry": "Healthcare (diagnostics)",
+    "type": "mna",
+    "secondary_types": ["growth"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 3, "ambiguity": 3, "quantitative": 4, "exhibit": 4, "prioritization": 3, "hypothesis": 3, "communication": 3, "industry_unfamiliarity": 3 },
+    "skills_tested": ["structuring", "quantitative", "exhibit_interpretation", "business_judgment", "synthesis", "recommendation"],
+    "unconventional": false,
+    "opening": "A private equity fund is considering buying a 60% stake in PathCare, a diagnostics chain with 45 labs and about 600 collection centres across South India. The fund would hold it for about five years. Should they invest?",
+    "client_context": "PathCare revenue ~₹500 cr, EBITDA ~₹110 cr (22%). The asking valuation is ₹2,750 cr enterprise value (25x EBITDA). The fund targets ~20% IRR (about 2.5x money in 5 years).",
+    "objective": "Decide whether the investment can meet the fund's return target and what the key diligence questions are.",
+    "clarifications": [
+      { "id": "c1", "topic": "return target", "answer": "The fund needs roughly 2.5x its money over 5 years (~20% IRR)." },
+      { "id": "c2", "topic": "exit", "answer": "The likely exit is an IPO or a sale to a strategic buyer. Listed diagnostics peers trade at 20-30x EBITDA; the fund's base case assumes an exit at ~20x." },
+      { "id": "c3", "topic": "industry", "answer": "Indian diagnostics is growing ~12% a year. It is fragmented, with pressure on routine-test pricing from online aggregators." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Management plan", "content": "Management projects revenue growing 18% a year and EBITDA margin expanding from 22% to 26% over five years.", "release_when": "Candidate asks about growth projections or the business plan." },
+      { "id": "d2", "label": "Test-mix economics", "content": "Routine tests are 65% of volume and 40% of revenue, at ~12% EBITDA margin. Specialised tests (genetics, oncology) are 35% of volume and 60% of revenue, at ~30% margin, and growing 25% a year.", "release_when": "Candidate asks about revenue mix, test portfolio, or where margins come from." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "PathCare routine-test price per test vs aggregator price (₹)",
+        "kind": "bar",
+        "unit": "₹",
+        "categories": ["FY22", "FY23", "FY24", "FY25"],
+        "series": [{ "name": "PathCare avg routine test price", "values": [420, 410, 385, 360] }, { "name": "Online aggregator avg price", "values": [300, 290, 280, 275] }],
+        "release_when": "Candidate asks about pricing pressure, competition or routine test economics.",
+        "takeaways": ["PathCare's routine-test price is falling ~6% a year toward aggregator levels; the premium has shrunk from 40% to 31%.", "Routine-test margins will be squeezed, so the margin-expansion story depends on specialised tests."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "Return under management's plan", "solution": "EBITDA year 5 = 500 × 1.18^5 × 26% ≈ 500 × 2.29 × 0.26 ≈ ₹297 cr. Exit at 20x → EV ≈ ₹5,950 cr. Entry EV ₹2,750 cr → ~2.2x (ignoring debt and cash). Below the 2.5x target even under management's plan.", "answer": "~2.2x: short of 2.5x even on management's numbers" },
+      { "id": "q2", "question": "What is needed to hit 2.5x?", "solution": "Need exit EV ≈ ₹6,875 cr → at 20x, EBITDA ≈ ₹344 cr; or entry price ≈ ₹2,380 cr (~21.6x) for the management plan to deliver 2.5x.", "answer": "EBITDA ~₹345 cr by year 5, or an entry EV ≈ ₹2,400 cr" }
+    ],
+    "analytical_paths": [
+      "Returns math first (entry, growth, margin, exit multiple) → identify which assumptions matter → test them with the mix and pricing data → decide.",
+      "Market → company → deal: the attractiveness of diagnostics, PathCare's position, then valuation and returns."
+    ],
+    "key_insights": [
+      "At 25x entry and 20x exit, even management's aggressive plan returns ~2.2x, below the 2.5x target; multiple compression kills returns.",
+      "Routine-test pricing is eroding toward aggregator prices, so margin expansion rests entirely on specialised tests.",
+      "The deal works only at a lower entry price (~₹2,400 cr) or with high confidence in the specialised-test growth story."
+    ],
+    "reference_solution": "Compute returns: management case gives ~₹297 cr EBITDA in year 5, exit ~₹5,950 cr at 20x, ~2.2x on ₹2,750 cr. Pressure-test: routine prices falling ~6% a year toward aggregator levels, so the plan's margin expansion depends on specialised-test growth (25% a year, 30% margin). Recommendation: don't pay 25x. Bid around ₹2,300-2,400 cr, or structure with ratchets; diligence specialised-test pipeline, referral relationships and pricing.",
+    "alternative_approaches": [
+      "Market-attractiveness-led approach that ends with the returns math.",
+      "Proposing a value-creation plan (shift mix to specialised, B2B hospital contracts, bolt-on acquisitions) that could justify a higher price, if it is quantified."
+    ],
+    "recommendation": "Do not invest at ₹2,750 cr. The returns miss the target even on management's plan, and routine-test pricing is eroding. Re-bid at ~₹2,300-2,400 cr, or use a structure (ratchet/earn-out) linked to specialised-test growth. Make diligence priorities the specialised-test pipeline, doctor referrals and B2B contracts. Next steps: build a downside case with 4% routine price erosion and a 18x exit.",
+    "interviewer_notes": ["Push for the returns calculation early; many candidates talk about market attractiveness for too long.", "After the exhibit, ask what it means for the margin assumption."],
+    "common_pitfalls": ["Ignoring exit multiple compression.", "Accepting management's plan uncritically.", "Recommending without a price."],
+    "benchmark_range": null,
+    "learning_objective": "Use returns math to structure an investment decision and pressure-test the assumptions that drive it."
+  },
+  {
+    "id": "seed-pricing-adhesive",
+    "source": "seed (original case written for this app)",
+    "title": "Specialty chemicals: pricing a structural adhesive for EV batteries",
+    "industry": "Specialty chemicals / EV supply chain",
+    "type": "pricing",
+    "secondary_types": ["market_entry"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 3, "ambiguity": 3, "quantitative": 4, "exhibit": 2, "prioritization": 3, "hypothesis": 3, "communication": 3, "industry_unfamiliarity": 5 },
+    "skills_tested": ["structuring", "quantitative", "business_judgment", "hypothesis", "recommendation"],
+    "unconventional": false,
+    "opening": "Our client, an Indian specialty chemicals company, has developed a structural adhesive used in assembling electric-vehicle battery packs. It can replace the bolts and rivets used today. Their production cost is about ₹600 per kg. How should they price it?",
+    "client_context": "Targets Indian EV and battery-pack makers (two-wheeler and four-wheeler). A German imported adhesive is used by a few OEMs; most OEMs still use mechanical fasteners.",
+    "objective": "Recommend a pricing approach and a price point for the launch.",
+    "clarifications": [
+      { "id": "c1", "topic": "customers / segments", "answer": "Two groups: a few OEMs already using an imported adhesive, and the majority who still use mechanical fasteners (bolts/rivets)." },
+      { "id": "c2", "topic": "company objective", "answer": "Win share quickly in the first two years while keeping a healthy margin; they have capacity for about 2,000 tonnes a year." },
+      { "id": "c3", "topic": "product performance", "answer": "Performance is comparable to the German product in qualification tests." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Usage per pack", "content": "About 1.5 kg of adhesive per battery pack (four-wheeler equivalent).", "release_when": "Candidate asks about usage per pack/unit or tries to value it per pack." },
+      { "id": "d2", "label": "Value versus fasteners (per pack)", "content": "Replacing fasteners saves: fastener hardware ₹1,400; 12 minutes of assembly labour at ₹600/hour; ~0.8 kg of weight, which OEMs value at about ₹200 per kg saved. Switching needs dispensing equipment of ~₹2 cr per line; a line makes ~50,000 packs a year and equipment lasts 5 years.", "release_when": "Candidate asks what the adhesive is worth to customers or what it replaces/saves." },
+      { "id": "d3", "label": "Imported competitor", "content": "The German adhesive sells at about ₹1,300 per kg landed in India, with 8-10 week lead times and currency risk.", "release_when": "Candidate asks about competitors or alternatives." },
+      { "id": "d4", "label": "Cost-plus norm", "content": "The company normally prices at cost plus 50% (i.e. ~₹900/kg).", "release_when": "Candidate asks how the company usually prices, or proposes cost-plus." }
+    ],
+    "exhibits": [],
+    "quant": [
+      { "id": "q1", "question": "Economic value to a fastener user, per kg", "solution": "Per pack: fasteners ₹1,400 + labour 0.2 hr × ₹600 = ₹120 + weight 0.8 × ₹200 = ₹160 → ₹1,680. Less equipment ₹2 cr / (5 × 50,000) = ₹80 → net ~₹1,600 per pack ÷ 1.5 kg ≈ ₹1,067 per kg.", "answer": "≈₹1,050-1,070 per kg" },
+      { "id": "q2", "question": "Price ceiling for imported-adhesive users", "solution": "Next best alternative is ₹1,300/kg with lead-time and FX risk, so the ceiling is ~₹1,300/kg (arguably a bit more for supply security).", "answer": "≈₹1,300 per kg" }
+    ],
+    "analytical_paths": [
+      "Cost-based floor (₹600) → competitor reference (₹1,300) → customer value (₹1,067 for switchers) → segment pricing between floor and value, leaving customers enough surplus to switch.",
+      "Value-based pricing with economic value to customer (EVC) = reference value + differentiation value, by segment."
+    ],
+    "key_insights": [
+      "Cost-plus (₹900) leaves a lot of money on the table with imported-adhesive users, whose alternative costs ₹1,300.",
+      "For fastener users the value is only ~₹1,067/kg, so pricing near ₹1,300 would stop them switching; they need a lower, share-the-value price.",
+      "Two segments with different reference values call for differentiated pricing (tiers, volume contracts, bundled equipment)."
+    ],
+    "reference_solution": "Floor is cost (₹600/kg). Segment by next-best alternative. Imported-adhesive users: ceiling ₹1,300, so price ~₹1,100-1,200 (a discount for local supply is still a clear win for the customer). Fastener switchers: value ~₹1,067/kg, so price ~₹850-950 to leave 15-20% of value as an incentive to switch, perhaps with dispensing equipment financed or bundled. Both are well above cost. Implement through volume-tiered contracts and application-specific grades rather than list-price discrimination.",
+    "alternative_approaches": [
+      "A single price around ₹1,000/kg as a simpler launch strategy, with volume discounts, is defensible if the candidate explains the trade-off.",
+      "Penetration pricing to lock in OEM qualifications (long switching cycles) is valid if margins are checked."
+    ],
+    "recommendation": "Use value-based, segmented pricing: ~₹1,150/kg for OEMs switching from the imported adhesive (still ~12% below import, plus local supply); ~₹900/kg with equipment-financing support for OEMs switching from fasteners, where value is ~₹1,067/kg. Both give 50-90% gross margin over ₹600 cost. Lock in multi-year supply contracts during qualification. Risks: price leakage between segments, the German supplier cutting price, and slow OEM qualification.",
+    "interviewer_notes": ["Candidates often stop at cost-plus; probe with 'what is it worth to the customer?' only via hints."],
+    "common_pitfalls": ["Cost-plus pricing only.", "Pricing at the value ceiling, leaving no reason to switch.", "Not converting per-pack value to per-kg."],
+    "benchmark_range": null,
+    "learning_objective": "Price from customer value and the next-best alternative, by segment, rather than cost-plus."
+  },
+  {
+    "id": "seed-pricing-ott-short",
+    "source": "seed (original case written for this app)",
+    "title": "Regional OTT platform: introducing an ad-supported tier",
+    "industry": "Media (streaming)",
+    "type": "pricing",
+    "secondary_types": ["strategy"],
+    "format": "short",
+    "duration_min": 15,
+    "difficulty": { "structuring": 2, "ambiguity": 2, "quantitative": 3, "exhibit": 1, "prioritization": 2, "hypothesis": 3, "communication": 2, "industry_unfamiliarity": 2 },
+    "skills_tested": ["quantitative", "business_judgment", "hypothesis", "recommendation"],
+    "unconventional": false,
+    "opening": "Our client is a Tamil-language streaming platform with about 20 lakh paying subscribers at ₹99 a month. It is thinking of launching a cheaper ₹49 plan with ads. Should it?",
+    "client_context": "Strong original content. Pays for content on multi-year deals, so costs are mostly fixed. Monthly churn is high among price-sensitive users.",
+    "objective": "Decide whether a ₹49 ad-supported tier increases profit.",
+    "clarifications": [
+      { "id": "c1", "topic": "objective", "answer": "Increase total monthly profit within a year." },
+      { "id": "c2", "topic": "costs", "answer": "Content costs are fixed; streaming and payment costs are about ₹10 per subscriber per month for any plan." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Research on uptake", "content": "Surveys suggest the ₹49 tier would attract ~12 lakh new subscribers, but ~5 lakh of the existing ₹99 subscribers would downgrade.", "release_when": "Candidate asks about expected uptake, cannibalisation or demand." },
+      { "id": "d2", "label": "Ad revenue", "content": "Advertisers would pay about ₹25 per ad-tier subscriber per month at scale.", "release_when": "Candidate asks about advertising revenue." }
+    ],
+    "exhibits": [],
+    "quant": [
+      { "id": "q1", "question": "Change in monthly profit", "solution": "Ad-tier contribution per sub = 49 + 25 - 10 = ₹64 vs ₹99 - 10 = ₹89 for premium. Downgraders: 5 lakh × (64 - 89) = -₹1.25 cr. New: 12 lakh × ₹64 = +₹7.68 cr. Net ≈ +₹6.4 cr a month.", "answer": "≈ +₹6.4 crore a month" }
+    ],
+    "analytical_paths": ["Contribution per subscriber by tier → new subs gained vs cannibalised → net profit → risks (ad fill, brand, churn)."],
+    "key_insights": ["Cannibalisation costs ₹25 contribution per downgrader, but new subscribers more than compensate: net ≈ +₹6.4 cr/month.", "The decision is sensitive to ad revenue per user and the ratio of new to cannibalised subscribers."],
+    "reference_solution": "Contribution: premium ₹89, ad tier ₹64. Net effect: +12 lakh × 64 - 5 lakh × 25 ≈ +₹6.4 cr/month. Launch, but manage cannibalisation (hold back some originals for premium, cap ad load) and verify ad revenue assumptions.",
+    "alternative_approaches": ["Break-even framing: how many new subscribers per downgrader are needed (25/64 ≈ 0.4)."],
+    "recommendation": "Launch the ₹49 ad tier: it adds ≈₹6.4 cr/month. Protect premium with early access to originals, and test ad revenue in one region first. The break-even is only ~0.4 new subscribers per downgrader, so there's a margin of safety. Risks: ad-market softness and user experience.",
+    "interviewer_notes": ["Quick quantitative case. Always ask 'so what?' after the number."],
+    "common_pitfalls": ["Forgetting cannibalisation.", "Forgetting ad revenue.", "Ignoring variable costs."],
+    "benchmark_range": null,
+    "learning_objective": "Net out cannibalisation against new demand in a tiered-pricing decision."
+  }
+]

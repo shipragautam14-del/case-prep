@@ -1,0 +1,170 @@
+[
+  {
+    "id": "seed-growth-d2c",
+    "source": "seed (original case written for this app)",
+    "title": "Ayurvedic skincare brand: 3x in three years",
+    "industry": "Beauty & personal care (D2C)",
+    "type": "growth",
+    "secondary_types": ["strategy"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 3, "ambiguity": 3, "quantitative": 3, "exhibit": 3, "prioritization": 4, "hypothesis": 3, "communication": 3, "industry_unfamiliarity": 2 },
+    "skills_tested": ["structuring", "prioritization", "quantitative", "exhibit_interpretation", "business_judgment", "synthesis", "recommendation"],
+    "unconventional": false,
+    "opening": "Our client is Vanaspa, a digital-first Ayurvedic skincare brand. It did about ₹120 crore of revenue last year and its investors want it to reach about ₹360 crore within three years, ahead of a possible IPO. The founders have asked us how they should get there.",
+    "client_context": "Founded 2018. Hero products: a kumkumadi face oil and an ubtan face wash. Sells through its own website, marketplaces (Amazon, Nykaa) and a small offline pilot. Contribution-margin positive but EBITDA negative due to marketing spend.",
+    "objective": "Identify the growth levers and a plan to reach ~₹360 crore revenue in three years without destroying unit economics.",
+    "clarifications": [
+      { "id": "c1", "topic": "profitability constraint", "answer": "Investors want growth, but they will not fund a plan in which marketing spend grows faster than revenue. The company should reach EBITDA break-even by year three." },
+      { "id": "c2", "topic": "product portfolio", "answer": "About 40 SKUs; the top 5 hero products are ~65% of revenue. Face care is the core category." },
+      { "id": "c3", "topic": "geography", "answer": "India only. About 70% of revenue comes from the top 8 metros." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Revenue by channel, last year", "content": "Own website ₹50 cr, marketplaces ₹52 cr, offline pilot ₹18 cr (about 200 modern-trade and pharmacy doors).", "release_when": "Candidate asks for revenue split by channel." },
+      { "id": "d2", "label": "Customer metrics", "content": "About 12 lakh active customers; average order value ₹700; ~1.43 orders per customer per year. 12-month repeat rate is 22%; category leaders are around 40%.", "release_when": "Candidate breaks revenue into customers × frequency × order value, or asks about retention/repeat." },
+      { "id": "d3", "label": "Digital acquisition cost trend", "content": "Blended customer acquisition cost (CAC) on digital rose from ₹450 two years ago to ₹900 now. First-order contribution margin is about ₹280.", "release_when": "Candidate asks about marketing efficiency, CAC, or scaling digital acquisition." },
+      { "id": "d4", "label": "Offline opportunity", "content": "The offline pilot doors average about ₹9 lakh revenue per door per year at ~25% contribution after trade margins, with no customer acquisition cost. There are roughly 8,000 relevant modern-trade and premium-pharmacy doors in the top 30 cities. New doors typically do about two-thirds of pilot productivity.", "release_when": "Candidate asks about offline/retail expansion or the offline pilot." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "Channel economics, last year",
+        "kind": "table",
+        "columns": ["Channel", "Revenue (₹ cr)", "Contribution margin after marketing", "12-month repeat rate", "Growth vs prior year"],
+        "rows": [["Own website", 50, "4%", "22%", "+8%"], ["Marketplaces", 52, "9%", "18%", "+15%"], ["Offline pilot", 18, "25%", "n/a", "+80%"]],
+        "release_when": "Candidate asks to compare channels or asks where growth has come from.",
+        "takeaways": ["The website is the least profitable after marketing and slowest-growing: digital acquisition is saturating.", "Offline has the best contribution and fastest growth, but from a small base.", "Repeat rates are low, so retention is a lever."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "What would it take to add ₹240 cr purely through digital acquisition?", "solution": "Revenue per active customer ≈ ₹700 × 1.43 ≈ ₹1,000/yr → need ~24 lakh more active customers. At CAC ₹900 that is ~₹216 cr of acquisition spend before churn (more, given 22% repeat), which is more than current revenue. Not viable under the marketing constraint.", "answer": "~24 lakh more customers and ₹200+ cr of acquisition spend: not viable" },
+      { "id": "q2", "question": "Size the offline lever.", "solution": "~2,500 doors × ₹6 lakh (two-thirds of ₹9 lakh) ≈ ₹150 cr in three years.", "answer": "≈₹150 cr from ~2,500 doors" },
+      { "id": "q3", "question": "Size the retention lever.", "solution": "Raising orders per customer from 1.43 to ~1.8 (repeat 22% → ~35%) on a base of ~15-18 lakh customers at ₹700 AOV adds roughly ₹40-50 cr.", "answer": "≈₹40-50 cr" }
+    ],
+    "analytical_paths": [
+      "Revenue = customers × frequency × AOV, by channel → acquisition is saturated (CAC doubled) → retention and offline are the capital-efficient levers → size each → plan to ₹360 cr.",
+      "Growth levers tree: core (penetration, frequency, pricing) vs adjacencies (new categories, channels, geographies, inorganic), then prioritised using the channel economics."
+    ],
+    "key_insights": [
+      "Digital acquisition has hit diminishing returns (CAC doubled; website margin after marketing is only 4%), so 'more of the same' cannot deliver 3x under the constraint.",
+      "Offline modern trade and pharmacies are the largest capital-efficient lever (~₹150 cr).",
+      "Retention (repeat 22% vs 40% benchmark) is a cheap lever worth ~₹40-50 cr."
+    ],
+    "reference_solution": "Clarify the constraint (no marketing-led growth). Break revenue into customers × frequency × AOV by channel. The channel exhibit shows digital is saturating and offline has the best economics. Sizing: offline ~₹150 cr (2,500 doors × ₹6 lakh), retention ~₹40-50 cr, marketplace growth and selective digital ~₹30-40 cr, and product extensions (e.g. body care from hero ingredients) ~₹20-30 cr. That gets to ~₹360 cr. Sequence: retention quick wins in year 1, offline scale-up years 1-3, adjacencies year 2+.",
+    "alternative_approaches": [
+      "An Ansoff-style view (penetration/product/market/diversification) is acceptable if the candidate prioritises with the economics instead of listing it.",
+      "Inorganic growth (acquiring a complementary brand) is a valid option to discuss, especially given IPO timing, but should be tested against capital availability."
+    ],
+    "recommendation": "Pursue a capital-efficient growth plan: (1) scale offline to ~2,500 modern-trade/pharmacy doors (~₹150 cr), with a distributor model and planograms for hero SKUs; (2) fix retention with regimen-based bundles, subscriptions and CRM (~₹40-50 cr); (3) keep digital acquisition at efficient CAC only; (4) extend hero ingredients into adjacent categories (~₹20-30 cr). Risks: offline working capital and returns, channel price conflict with marketplaces, and brand dilution. Next steps: pilot distributor model in 3 cities, and test retention levers on existing cohorts.",
+    "interviewer_notes": ["Push candidates who say 'increase marketing' to confront the CAC data and the constraint.", "A strong candidate adds up the levers to check they reach ₹360 cr."],
+    "common_pitfalls": ["Listing growth options without sizing them.", "Ignoring the unit-economics constraint.", "Forgetting to check that the levers add up to the target."],
+    "benchmark_range": null,
+    "learning_objective": "Build a growth plan that prioritises levers by economics and sizes them against a target."
+  },
+  {
+    "id": "seed-entry-qcomm",
+    "source": "seed (original case written for this app)",
+    "title": "Quick commerce: taking the model to Tier-2 India",
+    "industry": "E-commerce (quick commerce)",
+    "type": "market_entry",
+    "secondary_types": ["profitability"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 3, "ambiguity": 3, "quantitative": 4, "exhibit": 3, "prioritization": 3, "hypothesis": 4, "communication": 3, "industry_unfamiliarity": 2 },
+    "skills_tested": ["structuring", "hypothesis", "quantitative", "exhibit_interpretation", "business_judgment", "recommendation"],
+    "unconventional": false,
+    "opening": "Our client is ZipKart, a quick-commerce company delivering groceries in 10-15 minutes in 8 metro cities. It is profitable at the dark-store level in the metros. The board wants to enter 20 Tier-2 cities such as Indore, Nagpur, Coimbatore and Lucknow next year. Should they, and if so, how?",
+    "client_context": "~600 dark stores in metros. Well funded. A competitor has announced Tier-2 plans. ZipKart ran a 3-month pilot with 4 dark stores in Indore.",
+    "objective": "Decide whether and how to enter Tier-2 cities profitably. The board wants each dark store to break even within 12 months of launch.",
+    "clarifications": [
+      { "id": "c1", "topic": "success criteria", "answer": "Each dark store should reach break-even at the contribution-after-store-costs level within 12 months." },
+      { "id": "c2", "topic": "business model", "answer": "ZipKart earns a margin of about 18% on what it sells, plus a small delivery fee. Costs are riders, packaging and payment per order, plus the fixed costs of running each dark store." },
+      { "id": "c3", "topic": "competition", "answer": "One competitor has announced Tier-2 plans but has launched in only 2 cities so far. Local kiranas already offer phone ordering and home delivery in many neighbourhoods." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Market demand signals", "content": "Target cities have 10-40 lakh people each. App downloads from these cities are already ~6% of the national base. Urban household spend on groceries is ~70% of metro levels.", "release_when": "Candidate asks about market size, demand or customer interest." },
+      { "id": "d2", "label": "Dark-store fixed costs", "content": "Metro dark store: ~₹8 lakh per month (rent ₹2.5 lakh, staff ₹4 lakh, other ₹1.5 lakh). Tier-2 dark store: ~₹5.5 lakh per month.", "release_when": "Candidate asks about store-level costs, setup or break-even." },
+      { "id": "d3", "label": "Indore pilot demand", "content": "The Indore pilot stores are at ~220 orders/day after 3 months and the trend suggests ~350 orders/day at maturity.", "release_when": "Candidate asks about expected order volumes or pilot results." },
+      { "id": "d4", "label": "Levers tested in pilot", "content": "Adding electronics accessories, pharmacy and gifting raised AOV in one pilot store by about 15%. A 25-30 minute promise (instead of 10-15) lets one store serve roughly 1.6x the catchment area.", "release_when": "Candidate asks how to improve unit economics, AOV, or density." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "Per-order economics: metro vs Indore pilot (₹ per order)",
+        "kind": "table",
+        "columns": ["Item", "Metro", "Indore pilot"],
+        "rows": [["Average order value", 550, 380], ["Margin at 18%", 99, 68], ["Delivery fee", 15, 10], ["Rider cost", -45, -35], ["Packaging & payment", -14, -12], ["Contribution per order", 55, 31]],
+        "release_when": "Candidate asks about unit economics, per-order profitability or contribution.",
+        "takeaways": ["Tier-2 contribution per order is ~₹31 vs ₹55 in metros, mainly because AOV is ~30% lower.", "Lower rider cost only partly offsets the lower AOV."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "Break-even orders per day for a Tier-2 dark store", "solution": "Fixed cost ₹5.5 lakh/month ≈ ₹18,300/day. Contribution ₹31/order → ~590 orders/day (≈583 with ₹31.4). Metro: ₹8 lakh/month ≈ ₹26,700/day ÷ ₹55 ≈ 485 orders/day.", "answer": "~580-590 orders/day in Tier-2 vs ~485 in metros" },
+      { "id": "q2", "question": "Gap at expected maturity", "solution": "Expected 350 orders/day vs break-even ~585 → about 60% of break-even. Loss ≈ (585-350) × ₹31 ≈ ₹7,300/day ≈ ₹2.2 lakh per store per month.", "answer": "Each store runs at ~60% of break-even volume, losing roughly ₹2 lakh a month" }
+    ],
+    "analytical_paths": [
+      "Market attractiveness → can we win → economics. The economics show the standard model doesn't break even, which reframes the entry question into 'what model works'.",
+      "Hypothesis-first: 'Tier-2 demand exists, but lower AOV and density break the dark-store unit economics' → test with per-order economics and break-even."
+    ],
+    "key_insights": [
+      "Demand exists; the issue is unit economics. Tier-2 contribution per order is ~₹31 vs ₹55 in metros, driven by AOV.",
+      "Break-even needs ~585 orders/day but mature stores reach ~350, so a straight copy of the metro model fails the board's criterion.",
+      "Entry is viable only with a modified model: larger catchment (longer promise), higher-AOV assortment, and fewer, bigger cities first."
+    ],
+    "reference_solution": "Market entry reframed as a unit-economics problem. Check market attractiveness (it exists), then per-order and store economics: contribution ₹31/order × expected 350 orders/day doesn't cover ₹18,300/day of fixed costs (break-even ~585). Levers: AOV +15% (assortment) → contribution ~₹42 (margin 0.18 × 437 ≈ 79 + 10 - 35 - 12 ≈ ₹42); a 1.6x catchment raises orders to ~560 → ~₹23,500/day contribution vs ₹18,300 fixed cost, so the store breaks even. Recommend a staged entry: 4-5 largest Tier-2 cities with the modified model, then expand based on store-level break-even.",
+    "alternative_approaches": [
+      "Asset-light entry: partner with local kiranas or supermarkets as fulfilment points instead of dark stores.",
+      "Acquisition of a regional grocery delivery player, if one exists, as a way to buy density."
+    ],
+    "recommendation": "Don't roll out the metro model to 20 cities. Enter the 4-5 largest Tier-2 cities with a modified model: a 25-30 minute promise to widen catchments, and an assortment that adds higher-AOV categories. The pilot data suggest this reaches break-even (~₹42 × ~560 orders ≈ ₹23.5k/day vs ₹18.3k fixed). Gate further expansion on store-level break-even within 12 months. Risks: the competitor moving first, customer acceptance of a slower promise, and kirana responses. Next steps: run the modified model in 2 Indore stores for 8 weeks.",
+    "interviewer_notes": ["Candidates who spend most of the time on market size miss the point; steer only via probes.", "Good candidates compute break-even and compare it with expected volume unprompted."],
+    "common_pitfalls": ["Treating it as a pure market attractiveness exercise.", "Saying 'enter because the competitor is entering'.", "Not converting monthly fixed cost to daily before dividing."],
+    "benchmark_range": null,
+    "learning_objective": "Recognise when a market-entry question turns on unit economics, and design the entry model around break-even."
+  },
+  {
+    "id": "seed-growth-kabaddi-short",
+    "source": "seed (original case written for this app)",
+    "title": "Pro kabaddi franchise: growing revenue",
+    "industry": "Sports",
+    "type": "growth",
+    "secondary_types": [],
+    "format": "short",
+    "duration_min": 15,
+    "difficulty": { "structuring": 3, "ambiguity": 3, "quantitative": 2, "exhibit": 2, "prioritization": 3, "hypothesis": 2, "communication": 3, "industry_unfamiliarity": 4 },
+    "skills_tested": ["structuring", "prioritization", "business_judgment", "recommendation", "communication"],
+    "unconventional": true,
+    "opening": "Our client owns a professional kabaddi franchise based in Jaipur. Revenue is about ₹60 crore a year and the owner wants to grow it by 50% in two years. How would you think about it?",
+    "client_context": "League revenues are shared centrally (media rights), plus franchise-level sponsorship, ticketing and merchandise. Season lasts ~3 months; home games are ~11 matches.",
+    "objective": "Find the most promising ways to grow franchise revenue by ~₹30 crore in two years.",
+    "clarifications": [
+      { "id": "c1", "topic": "revenue breakdown", "answer": "Central media-rights share ₹35 cr (fixed by the league), sponsorships ₹18 cr, ticketing ₹4 cr, merchandise & other ₹3 cr." },
+      { "id": "c2", "topic": "stadium / capacity", "answer": "Home arena seats ~4,500; average occupancy ~70%; average ticket ~₹800." },
+      { "id": "c3", "topic": "fan base", "answer": "~2.5 million social followers, mostly Rajasthan and Haryana; the team finished in the top 4 last season." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Sponsorship benchmark", "content": "Top franchises in the league earn ₹30-35 cr in sponsorship; they sell 12-15 sponsor slots (jersey front, back, sleeves, arena, digital), while the client sells 7.", "release_when": "Candidate asks about sponsorship, benchmarks or inventory." },
+      { "id": "d2", "label": "Off-season engagement", "content": "The franchise runs no off-season events. Two other franchises run youth academies and a state-level league that generate ₹4-6 cr each in fees and sponsorship.", "release_when": "Candidate asks about off-season/year-round revenue or community/academy ideas." }
+    ],
+    "exhibits": [],
+    "quant": [
+      { "id": "q1", "question": "Ticketing upside", "solution": "11 games × 4,500 × 70% × ₹800 ≈ ₹2.8 cr (reported ₹4 cr includes premium seats/boxes). Even at 100% occupancy and +25% price, ticketing adds only ~₹2-3 cr.", "answer": "Small: ~₹2-3 cr" }
+    ],
+    "analytical_paths": [
+      "Split revenue into fixed (central media) and controllable streams → ticketing is capped by capacity → sponsorship inventory gap vs peers is the biggest lever → off-season properties as a second lever.",
+      "Fan-engagement lens: grow fan base → monetise via sponsors, merchandise, events."
+    ],
+    "key_insights": [
+      "₹35 cr of ₹60 cr is fixed central revenue, so the 50% growth must come from ~₹25 cr of controllable revenue, i.e. more than doubling it.",
+      "Ticketing is capacity-capped (a few crore at most); sponsorship inventory (7 vs 12-15 slots) is the main lever (~₹12-15 cr).",
+      "Year-round properties (academy, state league) are the second lever (~₹5 cr)."
+    ],
+    "reference_solution": "Separate fixed and controllable revenue. Ticketing is capacity-constrained. Sponsorship is under-monetised versus top franchises: expanding inventory (digital, arena, sleeves) and packaging it with content could add ₹12-15 cr. Launch year-round properties (academy, state league, content) for ~₹5 cr, and build merchandise with the fan base for ~₹2-4 cr. Reaching +₹30 cr is stretched; ~₹20-25 cr is realistic in two years.",
+    "alternative_approaches": ["A fan-lifecycle approach (acquire, engage, monetise) is valid if it gets to the sponsorship lever.", "Pushing back on the target (+50% is unrealistic given the fixed central share) is good business judgment."],
+    "recommendation": "Focus on sponsorship inventory expansion (+₹12-15 cr) and year-round properties (+~₹5 cr), plus merchandise; tell the owner that +₹20-25 cr is realistic in two years and +₹30 cr needs a stronger on-field brand or a second arena market. Risks: sponsor demand depends on team performance and viewership.",
+    "interviewer_notes": ["Unfamiliar industry: reward first-principles reasoning about how a franchise makes money."],
+    "common_pitfalls": ["Spending time on ticket pricing, which is capped.", "Not separating fixed central revenue."],
+    "benchmark_range": null,
+    "learning_objective": "Separate controllable from fixed revenue and prioritise levers by size in an unfamiliar industry."
+  }
+]

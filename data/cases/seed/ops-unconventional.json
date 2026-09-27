@@ -1,0 +1,174 @@
+[
+  {
+    "id": "seed-ops-hospital-ot",
+    "source": "seed (original case written for this app)",
+    "title": "Hospital: build two more operating theatres?",
+    "industry": "Healthcare (hospitals)",
+    "type": "operations",
+    "secondary_types": ["strategy"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 3, "ambiguity": 3, "quantitative": 4, "exhibit": 4, "prioritization": 3, "hypothesis": 4, "communication": 3, "industry_unfamiliarity": 3 },
+    "skills_tested": ["problem_understanding", "hypothesis", "quantitative", "exhibit_interpretation", "business_judgment", "recommendation"],
+    "unconventional": false,
+    "opening": "Our client is a 300-bed multi-specialty hospital in Pune. Patients are waiting about six weeks for planned surgeries, and some surgeons are taking cases to competing hospitals. The management wants to spend about ₹25 crore building two more operating theatres. They've asked us whether that's the right move.",
+    "client_context": "8 operating theatres (OTs), running 6 days a week, 8 am to 6 pm. About 118 surgeries a week. Average surgery duration ~2 hours. ICU of 30 beds.",
+    "objective": "Decide whether to build two additional OTs, or how else to cut the surgery waiting time.",
+    "clarifications": [
+      { "id": "c1", "topic": "current capacity / schedule", "answer": "8 OTs, 6 days a week, scheduled 8 am to 6 pm (10 hours). About 118 surgeries a week; average surgery time ~2 hours." },
+      { "id": "c2", "topic": "goal", "answer": "Bring the waiting time under 2 weeks within 12 months and keep surgeons from moving cases elsewhere." },
+      { "id": "c3", "topic": "demand", "answer": "Surgical demand is about 150 cases a week and growing ~8% a year." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Utilisation", "content": "OTs are in active surgical use (incision to closure) only about 50% of scheduled hours.", "release_when": "Candidate asks about OT utilisation or how the OTs are used today." },
+      { "id": "d2", "label": "Benchmarks", "content": "Best-practice hospitals achieve ~30-35 minute turnaround between cases and start the first case within 15 minutes of schedule.", "release_when": "Candidate asks for benchmarks or what good looks like." },
+      { "id": "d3", "label": "Downstream capacity", "content": "About 35% of surgeries need an ICU or step-down bed afterwards. ICU occupancy is ~92%. Adding a step-down bed costs about ₹25 lakh.", "release_when": "Candidate asks about post-operative beds, ICU, or other bottlenecks beyond the OT." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "Average OT day (per theatre), minutes",
+        "kind": "bar",
+        "unit": "minutes",
+        "categories": ["First-case start delay", "Surgery time", "Turnaround between cases", "Idle / unscheduled"],
+        "series": [{ "name": "Minutes per 600-minute OT day", "values": [70, 295, 185, 50] }],
+        "note": "About 2.5 cases per OT per day. Turnaround (room cleaning plus set-up for the next case) averages ~75 minutes per case.",
+        "release_when": "Candidate asks where OT time goes, asks for a time breakdown, or asks why utilisation is low.",
+        "takeaways": ["Only ~50% of the OT day is surgery; late starts (70 min) and slow turnarounds (~75 min each vs 30-35 benchmark) waste ~4 hours a day per OT.", "The constraint is process, not the number of theatres."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "Capacity with process fixes vs with two new OTs", "solution": "Today ~2.46 cases/OT/day (118 / 48 OT-days). Fixing start delay to ~15 min and turnaround to ~35 min: usable time ≈ 585 min; each case ≈ 120 + 35 = 155 min → ~3.7 cases/OT/day → 8 × 6 × 3.7 ≈ 178 cases/week (~+50%). Two new OTs at today's efficiency: 10 × 6 × 2.46 ≈ 148 cases/week (+25%) for ₹25 cr.", "answer": "Process fixes: ~175-180/week; two new OTs: ~148/week" },
+      { "id": "q2", "question": "Downstream check", "solution": "At ~175 cases/week, ICU/step-down demand rises by ~35% × 57 ≈ 20 extra patients a week. With ICU at 92%, that becomes the next bottleneck, so add ~6-8 step-down beds (~₹1.5-2 cr).", "answer": "ICU becomes binding; add ~6-8 step-down beds" }
+    ],
+    "analytical_paths": [
+      "Demand vs capacity → is capacity actually binding? → utilisation → where time goes (exhibit) → quantify process-fix capacity → check downstream constraints → recommend.",
+      "Hypothesis-first: 'the OTs aren't full, the day is'. Test with utilisation data."
+    ],
+    "key_insights": [
+      "OTs are only ~50% utilised: the waiting list is a process problem (late starts, slow turnarounds), not a theatre-count problem.",
+      "Fixing process lifts capacity ~50% (to ~178/week), more than two new OTs (~148/week), at a fraction of the cost.",
+      "Once OT throughput rises, ICU/step-down beds become the constraint."
+    ],
+    "reference_solution": "Clarify demand (150/week) vs throughput (118/week). Before building, check utilisation: 50%. The time breakdown shows 70-minute start delays and ~75-minute turnarounds. Process fixes (dedicated turnaround teams, parallel induction, pre-op readiness checks, standard instrument kits, first-case-on-time discipline) raise capacity to ~178/week, which covers demand. Check the ICU: at 92% occupancy it becomes the bottleneck, so add step-down beds. Don't build now; revisit OT construction in 2-3 years as demand grows 8% a year.",
+    "alternative_approaches": [
+      "Extending OT hours (evening lists, Sunday lists) is a valid quick lever, if staffing is considered.",
+      "Scheduling optimisation (block scheduling by specialty, day-care surgery shift) is also valid."
+    ],
+    "recommendation": "Don't build the two OTs now. Launch a 90-day OT efficiency programme: on-time first cases, a dedicated turnaround team, parallel anaesthesia induction, and pre-op readiness 24 hours ahead. That targets ~175 cases/week, enough to clear the backlog within a few months. Add 6-8 step-down beds so the ICU doesn't become the new bottleneck. Revisit construction when demand approaches the improved capacity (~2-3 years). Risks: surgeon and staff buy-in, and nursing staffing for step-down beds.",
+    "interviewer_notes": ["Great candidates question the premise ('is capacity the constraint?') before sizing the build.", "After q1, ask 'so what' — and whether anything else could become a bottleneck."],
+    "common_pitfalls": ["Accepting the client's solution and just doing an NPV of the new OTs.", "Missing downstream bottlenecks."],
+    "benchmark_range": null,
+    "learning_objective": "Question the client's proposed solution; diagnose capacity vs utilisation and find the real bottleneck."
+  },
+  {
+    "id": "seed-unconv-stubble",
+    "source": "seed (original case written for this app)",
+    "title": "State government: halve stubble burning",
+    "industry": "Public policy / Agriculture",
+    "type": "unconventional",
+    "secondary_types": ["strategy"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 4, "ambiguity": 5, "quantitative": 3, "exhibit": 2, "prioritization": 4, "hypothesis": 4, "communication": 4, "industry_unfamiliarity": 5 },
+    "skills_tested": ["problem_understanding", "structuring", "hypothesis", "prioritization", "quantitative", "business_judgment", "recommendation"],
+    "unconventional": true,
+    "opening": "The Punjab government has asked us to help it cut stubble burning by half within the next two paddy seasons. Farm fires after the paddy harvest are a major contributor to winter air pollution in North India. How would you approach this?",
+    "client_context": "Paddy is grown on ~75 lakh acres in Punjab. After harvest (October-November), farmers have a short window to clear the field and sow wheat. Burning is illegal, but enforcement is weak and politically sensitive.",
+    "objective": "Design a plan to cut the area burned by ~50% in two seasons, within a realistic budget.",
+    "clarifications": [
+      { "id": "c1", "topic": "why farmers burn", "answer": "The gap between paddy harvest and wheat sowing is only about 15-20 days. Burning is the fastest and cheapest way to clear straw." },
+      { "id": "c2", "topic": "current measures", "answer": "The state has subsidised crop-residue machines (like super seeders and happy seeders) for years, and there is a fine for burning that's rarely enforced." },
+      { "id": "c3", "topic": "budget", "answer": "The state can spend up to about ₹800 crore a season, partly with central support." },
+      { "id": "c4", "topic": "farmer profile", "answer": "About two-thirds of farmers have under 10 acres. Most farmers don't own residue machines; they hire them from custom hiring centres (CHCs)." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Machine stock and use", "content": "About 30,000 in-situ residue machines are in the state. A machine can cover ~8 acres a day, but machines currently average only ~45 acres per season. Today ~13.5 lakh acres are managed in-situ.", "release_when": "Candidate asks about machine availability, capacity or utilisation." },
+      { "id": "d2", "label": "Farmer economics", "content": "In-situ management costs a farmer about ₹2,500-3,000 an acre more than burning (machine hire, extra tractor time, diesel). Burning costs almost nothing.", "release_when": "Candidate asks about farmer costs/incentives or why farmers don't use machines." },
+      { "id": "d3", "label": "Ex-situ demand", "content": "Biomass power plants and industrial boilers could take straw from about 10 lakh acres a year today. Thermal plants have a co-firing mandate that is poorly met.", "release_when": "Candidate asks about alternative uses for straw, biomass or collecting straw." },
+      { "id": "d4", "label": "Shorter-duration varieties", "content": "Short-duration paddy varieties (like PR-126) mature ~3 weeks earlier with similar yields, widening the sowing window; they are ~30% of area today.", "release_when": "Candidate asks about the time window, crop varieties, or agronomic solutions." }
+    ],
+    "exhibits": [],
+    "quant": [
+      { "id": "q1", "question": "Can existing machines cover the target?", "solution": "Window ~18 days × 8 acres/day = ~144 acres per machine per season. 30,000 × 144 ≈ 43 lakh acres possible vs 13.5 lakh used today. Target: 50% of 75 lakh ≈ 37.5 lakh acres. So existing machines could cover it if utilisation roughly tripled; machine count isn't the binding constraint.", "answer": "Yes: ~43 lakh acres of capacity vs ~37.5 lakh needed" },
+      { "id": "q2", "question": "Cost of paying farmers to switch", "solution": "Additional acres needed ≈ 37.5 - 13.5 - ~10 (ex-situ) ≈ 14 lakh (if ex-situ scales fully), or 24 lakh with no ex-situ growth. At ₹2,500/acre: ₹350-600 cr a season, within the ₹800 cr budget.", "answer": "≈₹350-600 crore a season" }
+    ],
+    "analytical_paths": [
+      "Root-cause the farmer's decision (time, cost, availability) → segment farmers → levers: make alternatives cheaper (incentives), faster (machines, scheduling), widen the window (varieties), create straw demand (ex-situ), enforcement → size and prioritise within budget.",
+      "Supply/demand of residue-management capacity during the window."
+    ],
+    "key_insights": [
+      "The problem is farmer economics and time, not awareness or machine count: existing machines could cover ~43 lakh acres but are used at ~30% of capacity.",
+      "A per-acre incentive of ~₹2,500 (verified by satellite) for in-situ or ex-situ management fits within budget (~₹350-600 cr).",
+      "Widening the window (short-duration varieties) and building ex-situ demand make the plan sustainable."
+    ],
+    "reference_solution": "Frame around why a farmer burns: the cheapest, fastest option in a 15-20 day window. Levers: (1) economics: a direct per-acre incentive for no-burn, verified by satellite fire data; (2) access: CHC booking/scheduling to raise machine utilisation from ~45 to ~120+ acres per season; (3) time: push short-duration varieties from 30% to 60%+ of area; (4) straw demand: enforce co-firing and contract bale collection for ~10 lakh acres; (5) targeted enforcement in hotspots. Existing machines and budget are enough to reach 50%.",
+    "alternative_approaches": [
+      "Stakeholder-based approach (farmers, CHCs, government, industry, consumers of straw) that reaches the same levers.",
+      "Crop diversification away from paddy is valid but slow (beyond two seasons); good candidates flag it as long term."
+    ],
+    "recommendation": "Launch a four-part programme: (1) a ~₹2,500/acre no-burn incentive paid via DBT, verified by satellite (~₹350-600 cr/season); (2) a CHC booking app with guaranteed slots, to triple machine utilisation; (3) seed subsidies to push short-duration varieties toward 60% of area; (4) enforce thermal-plant co-firing and fund straw aggregation for ~10 lakh acres. Pilot in the 5 worst districts in season 1, then scale. Risks: fraud in incentive claims, political resistance to enforcement, and CHC capacity at peak.",
+    "interviewer_notes": ["Unconventional case: reward candidates who reason from the farmer's decision rather than forcing a business framework.", "Push for numbers once the structure is in place."],
+    "common_pitfalls": ["Jumping to 'awareness campaigns' or 'more fines'.", "Proposing more machines without checking utilisation.", "Ignoring the time window."],
+    "benchmark_range": null,
+    "learning_objective": "Structure an unfamiliar public-policy problem from the decision-maker's economics, then size levers."
+  },
+  {
+    "id": "seed-unconv-metro",
+    "source": "seed (original case written for this app)",
+    "title": "Metro rail: ridership far below forecast",
+    "industry": "Urban transport / Public sector",
+    "type": "unconventional",
+    "secondary_types": ["strategy", "growth"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 4, "ambiguity": 4, "quantitative": 3, "exhibit": 4, "prioritization": 4, "hypothesis": 4, "communication": 3, "industry_unfamiliarity": 4 },
+    "skills_tested": ["problem_understanding", "structuring", "hypothesis", "prioritization", "exhibit_interpretation", "recommendation"],
+    "unconventional": true,
+    "opening": "A new metro line in a large Indian city opened two years ago. It was forecast to carry 3.5 lakh riders a day but carries only about 1.2 lakh. The metro corporation wants to understand why and how to increase ridership.",
+    "client_context": "22 km elevated line with 20 stations, running along a major arterial road. Fares are ₹10-60 by distance. Trains run every 8 minutes at peak.",
+    "objective": "Diagnose the ridership gap and recommend actions to reach at least 2.5 lakh daily riders within two years.",
+    "clarifications": [
+      { "id": "c1", "topic": "forecast basis", "answer": "The forecast assumed the full network, including an interchange with a second line that is delayed by ~3 years." },
+      { "id": "c2", "topic": "fares vs alternatives", "answer": "Metro fares are similar to AC bus fares and about half of auto-rickshaw fares for the same trip." },
+      { "id": "c3", "topic": "service quality", "answer": "Punctuality is ~99%; trains are clean and air-conditioned; complaints are low." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Rider survey — reasons for not using the metro (people who travel along the corridor)", "content": "Top reasons: 'getting to/from the station is hard' 46%; 'station is far from my origin/destination' 21%; 'no parking at station' 12%; 'fare' 8%; 'safety at night' 7%; other 6%.", "release_when": "Candidate asks why people don't use the metro, or about customer research." },
+      { "id": "d2", "label": "Feeder services", "content": "Only 4 of 20 stations have feeder bus services; there are no shared e-rickshaw stands. Average walking distance to a station for corridor residents is ~1.4 km.", "release_when": "Candidate asks about last-mile connectivity, feeder buses or station access." },
+      { "id": "d3", "label": "Delayed interchange", "content": "The interchange line (expected in 3 years) was forecast to contribute ~1 lakh daily riders.", "release_when": "Candidate asks about the network or the forecast gap breakdown." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "Daily boardings by station group vs forecast",
+        "kind": "bar",
+        "unit": "thousand boardings per day",
+        "categories": ["Stations with feeder buses (4)", "Stations without feeder (16)"],
+        "series": [{ "name": "Forecast", "values": [70, 180] }, { "name": "Actual", "values": [50, 70] }],
+        "release_when": "Candidate asks to compare stations or asks where the gap is concentrated.",
+        "takeaways": ["Stations with feeder buses reach ~71% of forecast; stations without reach only ~39%.", "Most of the gap is at the 16 stations without last-mile connectivity."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "Decompose the gap", "solution": "Gap = 3.5 - 1.2 = 2.3 lakh. ~1.0 lakh is the delayed interchange (not fixable now). Of the remaining 2.5 lakh forecast from this line alone, actual is 1.2 → gap 1.3 lakh, mostly at non-feeder stations (180k forecast vs 70k actual → 110k gap).", "answer": "~1 lakh from the interchange delay; ~1.1 lakh from last-mile access at 16 stations" },
+      { "id": "q2", "question": "Potential from feeders", "solution": "If non-feeder stations reached the ~71% of forecast that feeder stations achieve: 0.71 × 180k ≈ 128k vs 70k → +58k/day. Total ≈ 1.8 lakh; the rest needs parking, walkability and fare products.", "answer": "≈ +55-60k riders/day" }
+    ],
+    "analytical_paths": [
+      "Decompose the gap (network effect vs line-level) → customer journey (reach station → ride → reach destination) → evidence points to access → quantify → plan.",
+      "Demand drivers (catchment, access, price, quality, alternatives) → rule out fare and quality with data → access."
+    ],
+    "key_insights": [
+      "~1 lakh of the 2.3 lakh gap is structural (delayed interchange) and can't be fixed by operations.",
+      "The rest is a last-mile access problem, not fare or quality: stations with feeders reach ~71% of forecast vs ~39% without.",
+      "Feeders at all stations could add ~55-60k riders/day; parking, walkability and integrated ticketing are needed to reach 2.5 lakh."
+    ],
+    "reference_solution": "Separate the network-driven gap (interchange delay ~1 lakh) from the line's own gap. Use the journey lens: fares and service quality are fine; access is the problem (survey 46% + 21%; feeder stations perform much better). Plan: feeder buses and e-rickshaw stands at all stations, park-and-ride, pedestrian access improvements, integrated bus-metro ticketing, and employer/campus tie-ups. Reset the target given the interchange delay.",
+    "alternative_approaches": ["A marketing/awareness-led hypothesis is reasonable to test but the data rejects it.", "Customer segmentation by trip purpose (commuters, students, shoppers) is a valid structure."],
+    "recommendation": "Tell the corporation that ~1 lakh of the gap is due to the delayed interchange and won't close until it opens. For the rest, fix last-mile access: feeder buses and shared e-rickshaws at all 16 remaining stations (+~55-60k/day), park-and-ride at outer stations, safe walkways within 1.5 km, and a single ticket across bus and metro. A realistic target is ~1.9-2.0 lakh within two years, rising past 3 lakh once the interchange opens. Risks: coordination with the city bus agency, and funding for feeders.",
+    "interviewer_notes": ["Candidates who jump to fare cuts should be challenged with the fare data if they ask; otherwise probe why."],
+    "common_pitfalls": ["Recommending fare cuts or marketing.", "Not separating the network gap from the line gap.", "Not reading the exhibit comparatively."],
+    "benchmark_range": null,
+    "learning_objective": "Use a customer-journey lens on an unconventional demand problem, and separate structural from fixable gaps."
+  }
+]

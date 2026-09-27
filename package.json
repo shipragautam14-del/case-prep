@@ -1,0 +1,28 @@
+{
+  "name": "case-practice-buddy",
+  "version": "1.0.0",
+  "description": "AI consulting case-interview practice buddy (IIMB SIP prep)",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "ingest": "node scripts/ingest.js",
+    "extract-cases": "node scripts/ingest.js --cases",
+    "simulate": "node scripts/simulate.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "express": "^5.2.1",
+    "jszip": "^3.10.2",
+    "mammoth": "^1.13.0",
+    "marked": "^18.0.14",
+    "pdf-parse": "^2.4.5",
+    "zod": "^4.6.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

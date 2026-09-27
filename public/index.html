@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Practice Buddy</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Case Practice Buddy <span class="sub">IIMB SIP consulting prep</span></div>
+    <nav class="actions">
+      <div class="menu">
+        <button data-action="new_case" class="primary">New case</button>
+        <button class="caret" data-menu="case-menu" aria-label="Case options">▾</button>
+        <div class="dropdown" id="case-menu">
+          <div class="dd-title">Case type</div>
+          <button data-case-type="any">Surprise me</button>
+          <button data-case-type="profitability">Profitability</button>
+          <button data-case-type="growth">Growth strategy</button>
+          <button data-case-type="market_entry">Market entry</button>
+          <button data-case-type="mna">M&amp;A / investment</button>
+          <button data-case-type="pricing">Pricing</button>
+          <button data-case-type="operations">Operations</button>
+          <button data-case-type="strategy">Strategy</button>
+          <button data-case-type="unconventional">Unconventional</button>
+          <div class="dd-title">Variant</div>
+          <button data-case-variant="harder">A harder one</button>
+          <button data-case-variant="short">A short one</button>
+        </div>
+      </div>
+      <button data-action="mock">Mock interview</button>
+      <button data-action="guesstimate">Guesstimate</button>
+      <div class="menu">
+        <button data-menu="drill-menu">Micro skill ▾</button>
+        <div class="dropdown" id="drill-menu">
+          <button data-drill="structuring">Structuring</button>
+          <button data-drill="prioritization">Prioritisation</button>
+          <button data-drill="hypothesis">Hypothesis</button>
+          <button data-drill="math">Math</button>
+          <button data-drill="exhibit">Exhibit reading</button>
+          <button data-drill="synthesis">Synthesis</button>
+          <button data-drill="clarification">Clarifying questions</button>
+        </div>
+      </div>
+      <div class="menu">
+        <button data-menu="more-menu">Review ▾</button>
+        <div class="dropdown" id="more-menu">
+          <button data-action="review">How am I progressing?</button>
+          <button data-action="redo_weakest">Redo my weakest skill</button>
+          <button data-action="redo_case">Redo last case</button>
+          <button data-open="history">Case history</button>
+          <div class="dd-title">Separate module</div>
+          <button data-action="pm">PM practice</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="chat">
+      <div id="messages" class="messages" aria-live="polite"></div>
+      <form id="composer" class="composer">
+        <textarea id="input" rows="2" placeholder='Say "give me a case" or use the buttons above…' autocomplete="off"></textarea>
+        <button type="submit" id="send" class="primary">Send</button>
+      </form>
+    </section>
+
+    <aside class="side" id="side">
+      <div id="side-content"></div>
+    </aside>
+  </main>
+
+  <dialog id="history">
+    <div class="dialog-head"><h2>Case history</h2><button data-close>✕</button></div>
+    <div id="history-body"></div>
+  </dialog>
+
+  <dialog id="exhibit-dialog">
+    <div class="dialog-head"><h2 id="exhibit-dialog-title"></h2><button data-close>✕</button></div>
+    <div id="exhibit-dialog-body"></div>
+  </dialog>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

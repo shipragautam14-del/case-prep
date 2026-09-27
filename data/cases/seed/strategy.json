@@ -1,0 +1,61 @@
+[
+  {
+    "id": "seed-strategy-tea",
+    "source": "seed (original case written for this app)",
+    "title": "Assam tea estate company: what next?",
+    "industry": "Agriculture / Plantations (tea)",
+    "type": "strategy",
+    "secondary_types": ["profitability", "growth"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 4, "ambiguity": 5, "quantitative": 3, "exhibit": 3, "prioritization": 4, "hypothesis": 4, "communication": 4, "industry_unfamiliarity": 5 },
+    "skills_tested": ["problem_understanding", "structuring", "hypothesis", "prioritization", "exhibit_interpretation", "business_judgment", "recommendation"],
+    "unconventional": false,
+    "opening": "Our client owns 12 tea estates in Assam and sells most of its tea through auctions. It has been loss-making for three years. The board is asking: should we sell some estates, invest to turn them around, or move into branded tea? What would you advise?",
+    "client_context": "Produces ~18 million kg of made tea a year, mostly CTC. Estates are a mix of old bushes and newer plantings. Labour is ~60% of production cost and wages are set by state regulation.",
+    "objective": "Recommend a strategic direction that returns the company to profitability within three years.",
+    "clarifications": [
+      { "id": "c1", "topic": "financials", "answer": "Revenue ~₹400 cr, operating loss ~₹30 cr last year. The company has limited cash and moderate debt." },
+      { "id": "c2", "topic": "market", "answer": "Auction prices for CTC tea have been flat in nominal terms for five years while wages have risen ~8% a year." },
+      { "id": "c3", "topic": "options", "answer": "The board is open to any combination, including selling estates." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Estate-level economics", "content": "Cost of production ranges from ₹190/kg at the best estates to ₹310/kg at the worst. Average auction realisation is ₹220/kg for most estates; three estates with better quality realise ₹280/kg.", "release_when": "Candidate asks about estate-level profitability or cost variation." },
+      { "id": "d2", "label": "Branded tea", "content": "Branded packaged tea earns ₹350-450/kg equivalent net of distribution but needs heavy marketing; national brands dominate. Regional brands succeed mostly in their home states. Building a brand would take ~₹60-80 cr over 3 years.", "release_when": "Candidate asks about branded tea or moving downstream." },
+      { "id": "d3", "label": "Estate sale market", "content": "Buyers exist for estates with good bushes and yields. Low-yield estates sell for little more than land value; some have been sold to smallholder-aggregator companies.", "release_when": "Candidate asks about selling estates or what they're worth." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "Estate portfolio: yield and cost of production",
+        "kind": "table",
+        "columns": ["Estate group", "No. of estates", "Share of output", "Yield (kg/ha)", "Cost of production (₹/kg)", "Realisation (₹/kg)"],
+        "rows": [["A: high-quality", 3, "30%", 2400, 190, 280], ["B: average", 5, "45%", 1900, 225, 220], ["C: old bushes, low yield", 4, "25%", 1200, 310, 215]],
+        "release_when": "Candidate asks to segment the estates or compare their performance.",
+        "takeaways": ["Group A is highly profitable (+₹90/kg), B is roughly break-even (-₹5/kg), and C is deeply loss-making (-₹95/kg).", "The company's losses come mostly from group C."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "Where do the losses come from?", "solution": "Output 18 mn kg. A: 5.4 mn kg × +₹90 = +₹49 cr. B: 8.1 mn kg × -₹5 = -₹4 cr. C: 4.5 mn kg × -₹95 = -₹43 cr. Net ≈ +₹2 cr at estate level; with ~₹32 cr of corporate overheads, operating loss ≈ ₹30 cr. So C destroys ~₹43 cr.", "answer": "Group C loses ~₹43 cr; A earns ~₹49 cr" }
+    ],
+    "analytical_paths": [
+      "Segment the portfolio before choosing an option: which estates make and lose money, and why → fix/sell/invest decisions differ by estate group → branded tea tested as an option for A's quality tea.",
+      "Option-evaluation approach: define criteria (profit impact, investment, risk, time), then evaluate the three board options, informed by portfolio data."
+    ],
+    "key_insights": [
+      "It isn't one company-wide answer: estate group C (old bushes, low yield) causes almost all the loss, and A is very profitable.",
+      "Sell or restructure C (e.g. lease to smallholder aggregators, or replant over time), fix B's cost, and protect A.",
+      "Branded tea is a costly, slow bet that competes with national brands; a premium/direct channel for group A's quality tea is a more realistic step."
+    ],
+    "reference_solution": "Reframe the board's either/or: segment the estates. The exhibit shows A profitable, B break-even and C losing ~₹43 cr. Sell or restructure C (land value plus smallholder partnerships), run a cost and yield programme in B (mechanised plucking, infilling), and move A's high-quality output from auctions to private sales, exports and a small premium/online brand rather than a full national brand. That returns the company to profit within ~2 years.",
+    "alternative_approaches": [
+      "An option-evaluation matrix (sell / turnaround / brand) that ends with a mixed answer by estate.",
+      "A 'replant C' option with a long payback (tea bushes take ~4-5 years to mature) can be defended if the candidate quantifies the cash need."
+    ],
+    "recommendation": "Don't pick one option for the whole company. (1) Exit or restructure the 4 group-C estates (sale, or lease to smallholder aggregators): removes ~₹43 cr of losses. (2) Run a 2-year productivity programme in the 5 group-B estates. (3) Take group A's premium tea direct: private sales, exports and a small premium online brand, instead of betting ₹60-80 cr on a national brand. Result: profitable within ~2 years. Risks: labour relations and government approvals for estate sales, and auction price volatility.",
+    "interviewer_notes": ["The board's framing is a trap: good candidates segment before choosing.", "Unfamiliar industry: reward first-principles reasoning about yield, cost and realisation."],
+    "common_pitfalls": ["Picking one of the three options for the whole company.", "Jumping to branding because margins look higher."],
+    "benchmark_range": null,
+    "learning_objective": "Segment a portfolio before answering a strategic either/or question."
+  }
+]

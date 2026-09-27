@@ -1,0 +1,219 @@
+[
+  {
+    "id": "seed-prof-multiplex",
+    "source": "seed (original case written for this app)",
+    "title": "Regional multiplex chain: EBITDA halved",
+    "industry": "Media & Entertainment (cinema exhibition)",
+    "type": "profitability",
+    "secondary_types": ["pricing"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 2, "ambiguity": 2, "quantitative": 3, "exhibit": 3, "prioritization": 3, "hypothesis": 3, "communication": 3, "industry_unfamiliarity": 2 },
+    "skills_tested": ["structuring", "prioritization", "hypothesis", "quantitative", "exhibit_interpretation", "synthesis", "recommendation"],
+    "unconventional": false,
+    "opening": "Our client is CineStar, a regional multiplex chain with about 60 screens across Tier-2 cities in Maharashtra and Gujarat. Its EBITDA has fallen from roughly ₹48 crore two years ago to about ₹21 crore this year. The promoter has asked us to figure out what is going on and what to do about it.",
+    "client_context": "Family-owned, 14 properties, 60 screens, mostly in malls. Competes with two national multiplex chains in most of its cities. No new screens added or closed in the last two years. Revenue streams: ticketing, food & beverage (F&B), and on-screen/in-lobby advertising.",
+    "objective": "Understand the drivers of the EBITDA decline and recommend how to restore profitability. The promoter would like to get back to FY23 profit levels within 18 months.",
+    "clarifications": [
+      { "id": "c1", "topic": "geography / footprint", "answer": "14 properties, 60 screens, Tier-2 cities in Maharashtra and Gujarat. The footprint has not changed in the last two years." },
+      { "id": "c2", "topic": "revenue streams / business model", "answer": "Three revenue streams: ticketing, food & beverage, and advertising. Film distributors take a share of net ticket revenue." },
+      { "id": "c3", "topic": "time period / how measured", "answer": "Comparing FY23 with FY25 (the current year), full-year numbers." },
+      { "id": "c4", "topic": "competition / industry trend", "answer": "Industry-wide footfalls in Tier-2 cities are down mid-to-high single digits since FY23 as OTT viewing grew. The two national chains in these cities are doing broadly fine." },
+      { "id": "c5", "topic": "any major changes made by the client", "answer": "Management made some pricing changes in April 2024 to offset cost inflation. No changes to screens, formats or staffing model." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Footfall and average ticket price", "content": "Annual footfall fell from 12.0 million (FY23) to 11.0 million (FY25), about -8%. Average ticket price (ATP) rose from ₹200 to ₹218, about +9%. Net ticketing revenue is therefore roughly flat at ~₹240 crore.", "release_when": "Candidate asks about ticketing revenue, footfalls/volumes, or ticket prices." },
+      { "id": "d2", "label": "F&B revenue drivers", "content": "F&B conversion (share of patrons who buy any F&B) fell from 62% in FY23 to 41% in FY25. Average spend per buying patron rose from ₹230 to ₹290 after menu prices were raised ~30% in April 2024. F&B gross margin moved from ~72% to ~78%.", "release_when": "Candidate breaks F&B revenue into volume/conversion and price/spend, or asks why F&B revenue fell." },
+      { "id": "d3", "label": "Customer survey on F&B", "content": "In an exit survey, 58% of patrons who did not buy F&B said price was the main reason (FY23: 21%). Satisfaction with food quality is unchanged.", "release_when": "Candidate asks why conversion dropped or asks about customer behaviour/research." },
+      { "id": "d4", "label": "Competitor F&B pricing", "content": "The two national chains in the same malls kept F&B prices broadly flat over the period and launched ₹199-₹249 'value combos'.", "release_when": "Candidate asks how competitors priced F&B or what competitors did." },
+      { "id": "d5", "label": "Cost lines", "content": "Distributor share ~45% of net ticket revenue (₹108 cr both years). F&B COGS ₹48 cr → ₹29 cr. Rent ₹70 cr → ₹72 cr. Staff ₹60 cr → ₹61 cr. Electricity & other opex ₹107 cr → ₹108 cr. Costs excluding F&B COGS are essentially flat.", "release_when": "Candidate asks about costs or the cost structure." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "CineStar revenue and EBITDA, FY23 vs FY25 (₹ crore)",
+        "kind": "table",
+        "unit": "₹ crore",
+        "columns": ["Line item", "FY23", "FY25"],
+        "rows": [["Ticketing (net)", 240, 240], ["Food & beverage", 171, 131], ["Advertising", 30, 28], ["Total revenue", 441, 399], ["Total costs", 393, 378], ["EBITDA", 48, 21]],
+        "note": "Numbers rounded.",
+        "release_when": "Candidate asks for a revenue breakdown by stream, or asks to see revenue vs cost trends.",
+        "takeaways": ["Ticketing is flat and costs are down slightly, so the decline is driven almost entirely by F&B revenue (-₹40 cr).", "Advertising dip is small (-₹2 cr) and follows footfall."]
+      },
+      {
+        "id": "e2",
+        "title": "Share of patrons buying F&B, by quarter (%)",
+        "kind": "line",
+        "unit": "%",
+        "categories": ["Q1 FY24", "Q2 FY24", "Q3 FY24", "Q4 FY24", "Q1 FY25", "Q2 FY25", "Q3 FY25", "Q4 FY25"],
+        "series": [{ "name": "F&B conversion", "values": [62, 61, 62, 60, 44, 42, 40, 41] }],
+        "note": "Menu price change effective 1 April 2024 (start of FY25).",
+        "release_when": "Candidate investigates the F&B trend over time or asks when the decline started.",
+        "takeaways": ["Conversion fell off a cliff exactly when prices were raised (Q1 FY25) and has not recovered, so this is a step-change caused by the price move, not a gradual trend like OTT."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "What was the F&B revenue impact of the conversion drop?", "solution": "FY25 spend per head = 41% × ₹290 = ₹118.9 vs FY23 62% × ₹230 = ₹142.6. F&B revenue ≈ 11.0M × ₹118.9 ≈ ₹131 cr vs 12.0M × ₹142.6 ≈ ₹171 cr. Had conversion stayed at 62% with the new ₹290 spend, F&B would be 11.0M × 0.62 × 290 ≈ ₹198 cr, so the conversion drop cost ~₹67 cr of revenue (~₹52 cr gross profit at 78%).", "answer": "Roughly ₹65-70 crore of revenue, or about ₹50 crore of gross profit" },
+      { "id": "q2", "question": "At what conversion would the price increase have been revenue-neutral per patron?", "solution": "Need conversion × ₹290 = ₹142.6 → conversion ≈ 49%. Actual 41% is well below, so the price increase destroyed value.", "answer": "About 49%" }
+    ],
+    "analytical_paths": [
+      "Revenue vs cost → revenue by stream → F&B → conversion vs spend per buyer → link to April 2024 price increase → survey/competitor evidence → quantify → recommend pricing fix.",
+      "Start with costs (hypothesis: rent/electricity inflation) → find costs flat → pivot to revenue.",
+      "Start with footfall/OTT hypothesis → find ticket revenue flat because ATP offset footfall → pivot to F&B."
+    ],
+    "key_insights": [
+      "Ticket revenue is flat (footfall -8% offset by ATP +9%) and costs are flat, so the EBITDA fall is an F&B problem.",
+      "F&B fell because conversion collapsed from 62% to 41% after a ~30% menu price increase; higher spend per buyer did not compensate (break-even conversion ≈ 49%).",
+      "Competitors held prices and launched value combos, so CineStar's patrons are price-sensitive relative to a visible alternative."
+    ],
+    "reference_solution": "Decompose EBITDA into revenue streams and costs. Ticketing is flat and costs are flat, while F&B revenue fell by ~₹40 cr. Decompose F&B revenue = footfall × conversion × spend per buyer. Footfall fell 8% (industry/OTT, largely outside the client's control), but conversion fell from 62% to 41% right after the April 2024 price increase, while spend per buyer rose only 26%. The price increase was value-destroying: break-even conversion was ~49%. Survey and competitor data confirm price sensitivity. Recommendation: re-architect F&B pricing (value combos, tiered menu, bundles with tickets) to recover conversion toward 55-60%, which could restore ~₹25-40 cr of gross profit.",
+    "alternative_approaches": [
+      "Customer-journey approach (awareness → visit → purchase in cinema) reaching the same F&B conversion insight.",
+      "Unit economics per patron (revenue and margin per head) comparing FY23 and FY25, which also isolates F&B.",
+      "A candidate who proposes a price-elasticity test (A/B pricing across properties) before a full rollback is making a valid, arguably stronger, recommendation."
+    ],
+    "recommendation": "Roll back the blanket 30% F&B increase in favour of a tiered menu: value combos (₹199-249) to win back price-sensitive patrons, premium items at current prices, and ticket+F&B bundles at booking. Pilot at 3-4 properties for 6-8 weeks to measure conversion before rolling out. Target conversion of 55%+, worth roughly ₹25-40 cr of gross profit. Do not close screens or cut staff: footfall decline is industry-wide and ATP has offset it. Risks: cannibalisation of higher-margin items, competitor price response, and the need to protect average spend.",
+    "interviewer_notes": [
+      "Good candidates notice early that a profit halving with flat footprint means something changed; asking 'did the client change anything?' is a strong clarification.",
+      "Push candidates who stop at 'footfall is down due to OTT' — the numbers show ticketing is flat.",
+      "After q1, ask 'so what?' — the answer should link to the pricing decision."
+    ],
+    "common_pitfalls": [
+      "Assuming OTT/footfall is the problem without checking ticket revenue.",
+      "Treating the higher F&B margin % as good news while absolute gross profit fell.",
+      "Recommending cost cuts when costs are flat."
+    ],
+    "benchmark_range": null,
+    "learning_objective": "Isolate the driver of a profit decline by decomposing revenue into volume, conversion and price, and connect it to a management decision."
+  },
+  {
+    "id": "seed-prof-dairy",
+    "source": "seed (original case written for this app)",
+    "title": "Dairy cooperative: margin squeeze",
+    "industry": "Dairy / Agri-processing",
+    "type": "operations",
+    "secondary_types": ["profitability"],
+    "format": "standard",
+    "duration_min": 25,
+    "difficulty": { "structuring": 3, "ambiguity": 3, "quantitative": 3, "exhibit": 3, "prioritization": 4, "hypothesis": 3, "communication": 3, "industry_unfamiliarity": 4 },
+    "skills_tested": ["structuring", "prioritization", "hypothesis", "analysis", "exhibit_interpretation", "quantitative", "business_judgment", "recommendation"],
+    "unconventional": false,
+    "opening": "Our client is a state dairy cooperative in Karnataka. It collects about 10 lakh litres of milk a day from around 2,000 village societies and sells packaged milk and dairy products. Its net margin has fallen from about 3% to under 1% over two years, even though volumes have grown slightly. The managing director wants to understand why and what to do.",
+    "client_context": "Farmer-owned cooperative; mandate to pay farmers fair procurement prices. Milk flows from village societies → bulk milk chillers (BMCs) at collection centres or directly to plants within ~30 km → processing plants → distributors. About 70% of sales is liquid milk; the rest is curd, ghee and skimmed milk powder (SMP).",
+    "objective": "Explain the margin decline and recommend actions to restore margins to ~3% without cutting farmer procurement prices.",
+    "clarifications": [
+      { "id": "c1", "topic": "business model / products", "answer": "About 70% of revenue is liquid milk; the rest is curd, ghee and skimmed milk powder. Milk that can't be sold as liquid milk is converted into lower-value products like SMP and ghee." },
+      { "id": "c2", "topic": "constraints", "answer": "As a cooperative, cutting the procurement price paid to farmers is not an option. Consumer price increases need state approval and are politically sensitive." },
+      { "id": "c3", "topic": "supply chain", "answer": "Village societies pour milk into bulk milk chillers (BMCs) at collection centres, which cool it to 4°C before tankers take it to plants. Societies close to plants deliver directly." },
+      { "id": "c4", "topic": "competition", "answer": "Private dairies are growing in cities, but the client's market share in packaged milk is stable." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Economics per litre (₹)", "content": "FY23 → FY25: sales realisation 52.0 → 54.9; procurement price paid to farmers 38.0 → 41.0; processing & logistics 8.5 → 9.6; overheads 4.0 → 4.0; margin 1.5 → 0.3.", "release_when": "Candidate asks for revenue and cost per litre, or a margin breakdown." },
+      { "id": "d2", "label": "Processing & logistics breakdown (₹ per litre)", "content": "FY23 → FY25: transport 3.0 → 3.1; chilling 1.5 → 1.55; plant processing 2.5 → 2.55; product loss & downgrading 1.5 → 2.4.", "release_when": "Candidate digs into processing & logistics costs." },
+      { "id": "d3", "label": "Downgrading definition and economics", "content": "Milk that arrives with high bacterial count cannot be sold as liquid milk and is converted to SMP/ghee or discarded. On average each downgraded litre loses about ₹18 of realisation vs liquid milk. The share of milk downgraded rose from ~4% to ~9% of intake.", "release_when": "Candidate asks what 'product loss & downgrading' is or why it rose." },
+      { "id": "d4", "label": "Power supply at collection centres", "content": "Since mid-2023, rural feeders in several districts get rationed three-phase power (4-6 hours of cuts a day). BMCs with diesel generator backup run them only sporadically because of diesel cost; around 900 BMCs have no backup at all.", "release_when": "Candidate asks why bacterial counts rose at particular BMCs, or asks about chilling/power/infrastructure." },
+      { "id": "d5", "label": "Solar-hybrid chiller option", "content": "A solar-hybrid retrofit costs about ₹6 lakh per BMC and keeps milk chilled through power cuts. Vendors can retrofit ~300 BMCs per quarter.", "release_when": "Candidate proposes fixing chilling/power at BMCs and asks about options or costs." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "Milk downgraded by collection route, FY25",
+        "kind": "table",
+        "unit": "%",
+        "columns": ["Collection route", "Share of intake volume", "Share of milk downgraded"],
+        "rows": [["BMC with generator backup", "35%", "3%"], ["BMC without backup", "45%", "16%"], ["Direct to plant (<30 km)", "20%", "4%"]],
+        "note": "FY23 downgrading was ~4% across all routes.",
+        "release_when": "Candidate asks where/which route the downgrading comes from, or asks for a breakdown of downgrading.",
+        "takeaways": ["Downgrading is concentrated in BMCs without power backup (16% vs 3-4% elsewhere).", "Those BMCs carry 45% of volume, so they explain almost all of the rise to ~9%."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "What is the annual cost of the extra downgrading?", "solution": "Annual intake = 10 lakh L/day × 365 ≈ 36.5 crore litres. Extra downgrading = 9% - 4% = 5% → ~1.8 crore litres × ₹18 ≈ ₹33 crore a year. Total margin drop = ₹1.2/L × 36.5 cr L ≈ ₹44 crore, so downgrading explains ~75% of it.", "answer": "About ₹33 crore a year, ~75% of the ₹44 crore margin decline" },
+      { "id": "q2", "question": "Payback of solar-hybrid retrofits for BMCs without backup?", "solution": "900 × ₹6 lakh = ₹54 crore. If downgrading at those BMCs falls from 16% to ~4%, saving ≈ 12% × 45% × 36.5 cr L × ₹18 ≈ ₹35 crore/yr. Payback ≈ 1.5 years.", "answer": "About 1.5 years" }
+    ],
+    "analytical_paths": [
+      "Margin per litre: realisation vs procurement vs processing vs overheads → procurement increase has been passed through → processing & logistics → downgrading → by route → power cuts at BMCs → fix.",
+      "Supply-chain walk (farm → society → BMC → plant → market), looking for where value is lost."
+    ],
+    "key_insights": [
+      "Procurement price rises (+₹3/L) have been mostly passed through in realisation (+₹2.9/L); the controllable squeeze is in processing & logistics (+₹1.1/L).",
+      "Almost all of that is product loss & downgrading (+₹0.9/L), about ₹33 cr a year.",
+      "Downgrading is concentrated at BMCs without power backup after rural power rationing: an operational cold-chain problem, not a pricing problem."
+    ],
+    "reference_solution": "Break margin per litre into realisation, procurement, processing & logistics, and overheads. Realisation growth has roughly matched procurement growth, so the squeeze comes from processing & logistics, and within that from product loss & downgrading (₹1.5 → ₹2.4 per litre). Downgrading doubled because milk sits unchilled at BMCs without power backup during rationed power supply (16% downgraded vs 3-4%). That costs ~₹33 cr a year. Fix the cold chain: solar-hybrid retrofits (₹54 cr, ~1.5-year payback), diesel/genset operating support in the interim, collection-time windows, and a quality-linked incentive for societies.",
+    "alternative_approaches": [
+      "A value-chain/process approach that follows the milk from farm to consumer is equally valid and often finds the loss faster.",
+      "Candidates may also propose product-mix optimisation (sell more curd/ghee at better margin). Valid as a secondary lever, but it doesn't address the root cause."
+    ],
+    "recommendation": "Treat this as a cold-chain problem. (1) Immediately: fund diesel for generator backup at the worst BMCs and shorten collection-to-chilling time. (2) Over 3-4 quarters: retrofit the ~900 BMCs without backup with solar-hybrid chillers (~₹54 cr, ~1.5-year payback), prioritising by volume and downgrade rate. (3) Introduce a milk-quality (bacterial count) incentive for societies. This recovers ~₹30+ cr/yr, bringing margin back toward 2.5-3%. Pricing actions are a last resort given political constraints. Risks: vendor capacity, maintenance of solar units, and continued power-supply deterioration.",
+    "interviewer_notes": [
+      "Candidates often jump to 'increase consumer price' or 'reduce farmer price'. Remind them of the cooperative constraints if they ask; otherwise challenge why.",
+      "The label looks like profitability but the answer is operational."
+    ],
+    "common_pitfalls": [
+      "Stopping at 'procurement costs went up' without checking pass-through.",
+      "Recommending price changes that the constraints rule out.",
+      "Missing that the exhibit concentrates the problem in one route."
+    ],
+    "benchmark_range": null,
+    "learning_objective": "Follow a profit problem into operations: decompose unit economics, find the line that moved, and trace it to a physical root cause."
+  },
+  {
+    "id": "seed-prof-saas-short",
+    "source": "seed (original case written for this app)",
+    "title": "Restaurant POS software: revenue stalling",
+    "industry": "B2B SaaS (restaurant technology)",
+    "type": "profitability",
+    "secondary_types": ["growth"],
+    "format": "short",
+    "duration_min": 15,
+    "difficulty": { "structuring": 2, "ambiguity": 2, "quantitative": 3, "exhibit": 2, "prioritization": 3, "hypothesis": 3, "communication": 2, "industry_unfamiliarity": 3 },
+    "skills_tested": ["structuring", "hypothesis", "quantitative", "exhibit_interpretation", "synthesis"],
+    "unconventional": false,
+    "opening": "Our client sells subscription point-of-sale and inventory software to restaurants in India. Revenue grew fast for three years but has been flat for the last four quarters, even though the sales team is signing more new restaurants than ever. The CEO wants to know why.",
+    "client_context": "About 18,000 restaurant customers at the start of the year. Monthly subscription averages ₹2,000 per outlet. Sells to independent restaurants and small chains. Pricing unchanged for two years.",
+    "objective": "Diagnose why revenue has stalled despite strong new sales, and say what to fix first.",
+    "clarifications": [
+      { "id": "c1", "topic": "pricing / revenue model", "answer": "Flat monthly subscription, averaging ₹2,000 per outlet. No price changes in two years. There are no significant add-on products." },
+      { "id": "c2", "topic": "customer segments", "answer": "Mostly independent restaurants (about 80% of customers) plus small chains of 2-10 outlets." }
+    ],
+    "data": [
+      { "id": "d1", "label": "Customer flows, last 12 months", "content": "Customers at start of year: 18,000. New customers added: 7,200 (up from 5,000 the previous year). Customers lost: 7,300. End of year: ~17,900.", "release_when": "Candidate asks about number of customers, new customers vs churn, or retention." },
+      { "id": "d2", "label": "Churn reasons (exit interviews)", "content": "Of churned customers: 45% closed down (restaurant shut); 35% switched to a competitor offering free POS bundled with an online-ordering aggregator; 20% cited poor onboarding/support.", "release_when": "Candidate asks why customers leave." }
+    ],
+    "exhibits": [
+      {
+        "id": "e1",
+        "title": "Annual churn rate by customer tenure",
+        "kind": "bar",
+        "unit": "% of customers lost in the year",
+        "categories": ["0-6 months", "6-12 months", "1-2 years", "2+ years"],
+        "series": [{ "name": "Churn rate", "values": [58, 36, 18, 9] }],
+        "note": "Tenure at the start of the period.",
+        "release_when": "Candidate asks which customers churn or asks to segment churn.",
+        "takeaways": ["Churn is concentrated in the first year, so it is an onboarding/fit problem and the new-customer engine is feeding a leaky bucket.", "Established customers are sticky (9%)."]
+      }
+    ],
+    "quant": [
+      { "id": "q1", "question": "What is the annual churn rate, and what does it mean for growth?", "solution": "Churn = 7,300 / 18,000 ≈ 40% a year. To grow, the client must add more than ~40% of its base each year just to stand still. Revenue ≈ 18,000 × ₹2,000 × 12 ≈ ₹43 cr, so lost customers take away ~₹17.5 cr of annual run-rate revenue.", "answer": "~40% annual churn, ≈₹17-18 cr of annual recurring revenue lost" }
+    ],
+    "analytical_paths": [
+      "Revenue = customers × price → price flat → customers flat → adds vs losses → churn ~40% → segment by tenure/reason → early-life churn + competitor bundling → fix onboarding and qualification; respond to bundling.",
+      "Funnel/customer-lifecycle view: acquire → onboard → retain → expand."
+    ],
+    "key_insights": [
+      "The problem is not acquisition: gross adds are up 44%, but ~40% annual churn wipes them out.",
+      "Churn is concentrated in the first year of tenure, so onboarding and customer fit are the fixable parts; restaurant closures (45%) are structural."
+    ],
+    "reference_solution": "Revenue = customers × ARPU. ARPU is flat, so look at customers: adds of 7,200 vs losses of 7,300, i.e. ~40% churn. The exhibit shows churn concentrated in the first 12 months (58%, 36%), and reasons show closures (unavoidable, which argues for qualifying leads toward more stable restaurants), switching to bundled aggregator POS, and poor onboarding. Priorities: fix onboarding in the first 90 days, tighten sales targeting and incentives (pay on 6-month retention, not signature), and respond to bundling with integrations.",
+    "alternative_approaches": [
+      "Cohort-based analysis of revenue retention, which reaches the same conclusion.",
+      "Starting from sales-team incentives (paid on signed deals, so they bring in poor-fit customers) is a strong hypothesis-led route."
+    ],
+    "recommendation": "Stop pouring customers into a leaky bucket: move sales incentives to 6-month retained customers, qualify out high-risk new restaurants, build a 90-day onboarding programme, and add integrations with aggregators to neutralise the free bundled POS. Target halving first-year churn, which would restore ~₹8-9 cr of annual run-rate. Risk: slower headline sign-ups in the short term.",
+    "interviewer_notes": ["Short case: expect a crisp structure and a quick move to customer flows."],
+    "common_pitfalls": ["Suggesting price increases or more sales hiring without noticing churn.", "Reading the exhibit as 'churn is high' without the tenure implication."],
+    "benchmark_range": null,
+    "learning_objective": "Spot a leaky-bucket dynamic (stock vs flow) and turn a churn exhibit into a prioritised fix."
+  }
+]

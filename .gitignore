@@ -1,0 +1,7 @@
+node_modules/
+var/
+.env
+# Source documents (casebooks, notes) are private course material: keep them local.
+sources/**/*
+!sources/**/
+!sources/**/README.md
