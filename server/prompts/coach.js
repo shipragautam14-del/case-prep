@@ -13,7 +13,7 @@ Rules for the debrief:
 - stronger_approach: a short, concrete account of how a strong candidate would have run THIS case (opening structure tailored to the client, first branch and why, the key analysis, the synthesis sentence). Mention alternatives where the sources allow more than one approach.
 - next_case_reminder: one sentence the candidate should remember at the start of their next case.
 - mistake_tags: choose only tags that clearly apply.
-Keep each field tight. Output only the JSON object.`;
+Keep it tight: the rendered debrief (excluding skill_ratings) should read in about two minutes, roughly 350-450 words. stronger_approach ≤ 120 words; each list item one or two sentences. skill_ratings evidence: one sentence each. Output only the JSON object.`;
 
 export function coachInput(caseObj, session, learnerSummary, sourceSnippets) {
   const s = session.state;
