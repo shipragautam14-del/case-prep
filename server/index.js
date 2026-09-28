@@ -9,6 +9,16 @@ import { buildIndex } from "./knowledge/ingest.js";
 import { sourceStatus, resetRetrievalCache } from "./knowledge/retrieval.js";
 
 const app = express();
+
+// Optional password lock for hosted deployments: set APP_PASSWORD (any username works).
+if (process.env.APP_PASSWORD) {
+  app.use((req, res, next) => {
+    const [scheme, encoded] = (req.headers.authorization || "").split(" ");
+    const pass = scheme === "Basic" && encoded ? Buffer.from(encoded, "base64").toString().split(":").slice(1).join(":") : null;
+    if (pass === process.env.APP_PASSWORD) return next();
+    res.set("WWW-Authenticate", 'Basic realm="Case Practice Buddy"').status(401).send("Password required");
+  });
+}
 app.use(express.json({ limit: "200kb" }));
 app.use(express.static(path.join(ROOT, "public")));
 app.use("/vendor/marked", express.static(path.join(ROOT, "node_modules", "marked", "lib")));

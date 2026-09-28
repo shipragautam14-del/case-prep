@@ -1,0 +1,13 @@
+# One-click deploy on Render (https://render.com): New → Blueprint → pick this repo.
+services:
+  - type: web
+    name: case-practice-buddy
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false        # you paste your key in the Render dashboard
+      - key: APP_PASSWORD
+        sync: false        # the password that keeps the site private

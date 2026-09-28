@@ -9,7 +9,8 @@
     "ingest": "node scripts/ingest.js",
     "extract-cases": "node scripts/ingest.js --cases",
     "simulate": "node scripts/simulate.js",
-    "build:web": "node scripts/build-web.js"
+    "build:web": "node scripts/build-web.js",
+    "build:project": "node scripts/build-claude-project.js"
   },
   "author": "",
   "license": "ISC",
