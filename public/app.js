@@ -259,6 +259,7 @@ async function act(action, options = {}) {
 // ------------------------------------------------------------------ events
 $("#composer").addEventListener("submit", (e) => {
   e.preventDefault();
+  if (listening) rec?.stop();
   const text = input.value;
   input.value = "";
   send(text);
@@ -268,6 +269,104 @@ input.addEventListener("keydown", (e) => {
     e.preventDefault();
     $("#composer").requestSubmit();
   }
+});
+
+// ------------------------------------------------------------------ voice input
+// Two routes: the browser's speech recognition where the page may use the microphone
+// (e.g. the local app in Chrome/Edge), otherwise the device's own dictation, which types
+// into the answer box. Either way the words land in the box so they can be checked first.
+const micBtn = $("#mic");
+const tip = $("#voice-tip");
+const Recognition = globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
+let rec = null;
+let listening = false;
+
+function dictationShortcut() {
+  const ua = navigator.userAgent;
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return "tap the <b>microphone</b> on your keyboard";
+  if (/Android/.test(ua)) return "tap the <b>microphone</b> on your keyboard";
+  if (/Mac/.test(ua)) return "press <kbd>Fn</kbd> twice (or the <kbd>🎤</kbd> key)";
+  if (/Windows/.test(ua)) return "press <kbd>Windows</kbd> + <kbd>H</kbd>";
+  if (/CrOS/.test(ua)) return "press <kbd>Search</kbd> + <kbd>D</kbd>";
+  return "use your device's dictation shortcut";
+}
+
+function showDictationTip(reason) {
+  tip.innerHTML = `${reason ? `${reason} ` : ""}To answer by voice, click in the answer box and ${dictationShortcut()}. Speak, check the text, then press Send.<button type="button" id="tip-close">Got it</button>`;
+  tip.hidden = false;
+  $("#tip-close").onclick = () => { tip.hidden = true; input.focus(); };
+  input.focus();
+}
+
+function setListening(v) {
+  listening = v;
+  micBtn.classList.toggle("listening", v);
+  micBtn.setAttribute("aria-pressed", String(v));
+  micBtn.querySelector(".mic-label").textContent = v ? "Listening" : "Speak";
+  micBtn.title = v ? "Stop listening" : "Answer by voice";
+}
+
+function startRecognition() {
+  const base = input.value.trim();
+  rec = new Recognition();
+  rec.lang = navigator.language?.startsWith("en") ? navigator.language : "en-IN";
+  rec.continuous = true;
+  rec.interimResults = true;
+  let finalText = "";
+  rec.onresult = (e) => {
+    let interim = "";
+    for (let i = e.resultIndex; i < e.results.length; i++) {
+      const t = e.results[i][0].transcript;
+      if (e.results[i].isFinal) finalText += t;
+      else interim += t;
+    }
+    input.value = [base, (finalText + interim).trim()].filter(Boolean).join(" ");
+  };
+  rec.onerror = (e) => {
+    setListening(false);
+    if (["not-allowed", "service-not-allowed", "audio-capture"].includes(e.error)) {
+      showDictationTip("This page can't use the microphone directly here.");
+    } else if (e.error !== "aborted" && e.error !== "no-speech") {
+      showDictationTip("Voice input stopped unexpectedly.");
+    }
+  };
+  rec.onend = () => { setListening(false); input.focus(); };
+  let heard = false;
+  rec.onaudiostart = () => { heard = true; };
+  setTimeout(() => {
+    if (listening && !heard && !finalText) {
+      rec.abort?.();
+      setListening(false);
+      showDictationTip("Voice input didn't start.");
+    }
+  }, 5000);
+  try {
+    rec.start();
+    setListening(true);
+    tip.hidden = true;
+  } catch {
+    showDictationTip("This page can't use the microphone directly here.");
+  }
+}
+
+async function micAllowed() {
+  // In the claude.ai frame the microphone is refused outright; ask first so we never
+  // show "Listening" while nothing can be heard.
+  if (!navigator.mediaDevices?.getUserMedia) return false;
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    stream.getTracks().forEach((t) => t.stop());
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+micBtn.addEventListener("click", async () => {
+  if (listening) return rec?.stop();
+  if (!Recognition) return showDictationTip("");
+  if (!(await micAllowed())) return showDictationTip("This page can't use the microphone directly here.");
+  startRecognition();
 });
 
 function closeMenus() {
