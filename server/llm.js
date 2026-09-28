@@ -45,7 +45,13 @@ function runCli(args, input) {
     const timer = setTimeout(() => child.kill("SIGKILL"), 300_000);
     child.stdout.on("data", (d) => (out += d));
     child.stderr.on("data", (d) => (err += d));
-    child.on("error", reject);
+    child.on("error", (e) =>
+      reject(
+        e.code === "ENOENT"
+          ? new Error("No AI connection set up. Either sign in to Claude Code (run: npm install -g @anthropic-ai/claude-code, then: claude auth login) or add ANTHROPIC_API_KEY to the .env file, then restart.")
+          : e,
+      ),
+    );
     child.on("close", (code) => {
       clearTimeout(timer);
       if (code !== 0 && !out) return reject(new Error(`claude CLI exited ${code}: ${err.slice(0, 500)}`));
